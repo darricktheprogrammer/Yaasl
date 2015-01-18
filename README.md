@@ -1,0 +1,1 @@
+Useful sub-routines for AppleScript.
