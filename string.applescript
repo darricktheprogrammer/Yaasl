@@ -184,3 +184,32 @@ on convert_case(str, tCase)
 		return str
 	end if
 end convert_case
+
+
+(**
+ * Remove whitespace from beginning and end of string.
+ *
+ * @param String The string to trim.
+ * @return String
+ *)
+on trim(str)
+	if str is ""
+		return str
+	end if
+
+	repeat with i from 1 to (count str)
+		if item i of str is not in WHITESPACE
+			set strstart to i
+			exit repeat
+		end if
+	end repeat
+
+	repeat with i from (count str) to 1 by -1
+		if item i of str is not in WHITESPACE
+			set strend to i
+			exit repeat
+		end if
+	end repeat
+
+	return text strstart thru strend of str
+end trim
