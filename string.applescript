@@ -279,3 +279,57 @@ on pad_right_with_char(char, str, padwidth)
 	end repeat
 	return str
 end pad_left_with_char
+
+
+(**
+ * Simplistic, python-style string formatter.
+ *
+ * This routine is based on python's `string.format()` method, but is a lot simpler.
+ * It will replace each instance of curly braces (`{}`) in the first string argument
+ * with the corresponding string from the list given as the second argument. This
+ * routine does not support python's more advanced string replacement features, such
+ * as the mini-language, or positional/keyworded substitutions.
+ *
+ * As a convenience, if there is only one replacement to be made, the second argument
+ * can simply be a string. It does not have to be a list.
+ *
+ * To escape a set of braces, simply put an asterisk in between them. This will
+ * tell `format()` to ignore them, and they will be printed out as a standard set of braces.
+ *
+ * ```
+ * format("This is a {} string.", "test")         --> This is a test string.
+ * format("This is a {} string.", {"test"})       --> This is a test string.
+ * format("This is a {} {}", {"test", "string"})  --> This is a test string.
+ * format("This is a {} string.", {"test"})       --> This is a test string.
+ * format("These are {}: {*}.", {"curly braces"}) --> These are curly braces: {}.
+ * ```
+ *
+ * @param String The original string formatting template.
+ * @param [String, List] One or more strings used to replace `{}` in the string template.
+ * @return String
+ *)
+on format(str, args)
+	if class of args is not list then
+		set args to {args}
+	end if
+	
+	set parts to split(str, "{}")
+	
+	-- Make sure the amount of args matches the amount of braces
+	set {braceCount, argcount} to {(count parts) - 1, count args}
+	if braceCount ≠ argcount then
+		set errmsg to format("Expected {} arguments, but received {}.", {braceCount, argcount})
+		error errmsg number 702
+	end if
+	
+	set formatted to {}
+	set partLen to (count parts)
+	repeat with i from 1 to partLen
+		set end of formatted to item i of parts
+		if i < partLen then
+			set end of formatted to (item i of args as string)
+		end if
+	end repeat
+	
+	return search_and_replace(formatted as string, "{*}", "{}")
+end format
