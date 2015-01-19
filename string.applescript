@@ -213,3 +213,69 @@ on trim(str)
 
 	return text strstart thru strend of str
 end trim
+
+
+(**
+ * Pad a string with spaces on the left until it reaches the desired width.
+ *
+ * @param String The string to pad.
+ * @param Integer The desired width of the string.
+ * @return String
+ *)
+on pad_left(str, padwidth)
+	return pad_left_with_char(" ", str, padwidth)
+end padLeft
+
+
+(**
+ * Pad a string with spaces on the right until it reaches the desired width.
+ *
+ * @param String The string to pad.
+ * @param Integer The desired width of the string.
+ * @return String
+ *)
+on pad_right(str, padwidth)
+	return pad_right_with_char(" ", str, padwidth)
+end padLeft
+
+
+(**
+ * Pad a string with the given on the left until it reaches the desired width.
+ *
+ * @param Char A single character to be used for padding.
+ * @param String The string to pad.
+ * @param Integer The desired width of the string.
+ * @return String
+ *)
+on pad_left_with_char(char, str, padwidth)
+	if (count char) > 1
+		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
+	end if
+
+	set padcount to padwidth - (count str)
+	repeat with i from 1 to padcount
+		set str to char & str
+	end repeat
+	return str
+end pad_left_with_char
+
+
+(**
+ * Pad a string with the given on the right until it reaches the desired width.
+ *
+ * @param Char A single character to be used for padding.
+ * @param String The string to pad.
+ * @param Integer The desired width of the string.
+ * @return String
+ *)
+on pad_right_with_char(char, str, padwidth)
+	if (count char) > 1
+		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
+	end if
+
+	set padcount to padwidth - (count str)
+	repeat with i from 1 to padcount
+		set str to str & char
+	end repeat
+	return str
+end pad_left_with_char
