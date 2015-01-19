@@ -57,3 +57,21 @@ on join(theList, delimiter)
 	set AppleScript's text item delimiters to ""
 	return theText
 end join
+
+
+(**
+ * Search for text and replace it.
+ *
+ * @param String The original string.
+ * @param String The text to replace.
+ * @param String The replacement text.
+ * @return String
+ *)
+on search_and_replace(str, oldText, newText)
+	set AppleScript's text item delimiters to oldText
+	set myList to text items of str
+	set AppleScript's text item delimiters to newText
+	set str to myList as string
+	set AppleScript's text item delimiters to ""
+	return str
+end search_and_replace
