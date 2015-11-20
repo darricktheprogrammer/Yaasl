@@ -17,6 +17,7 @@ property version : 1.0
  * @example unique({"a", "b", "c", "a", "b"})
  *          --> {"a", "b", c}
  *
+ * @throws TypeError (704)
  * @param List The list containing duplicates to delete
  * @return List
  *)
