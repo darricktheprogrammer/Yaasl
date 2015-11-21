@@ -9,12 +9,17 @@ script BaseListTest
 	property parent : TestSet(me)
 	property listlib : missing value
 
-	property emptylist : {}
-	property shortlist : {"a", "b", "c"}
-	property recordlist : {{a:1, b:2}, {c:3, d:4}}
-	property longlist : {"a", "b", "c", "d", "e", "f", "g"}
+	property emptylist : missing value
+	property shortlist : missing value
+	property recordlist : missing value
+	property longlist : missing value
 
 	on setUp()
+		set emptylist to {}
+		set shortlist to {"a", "b", "c"}
+		set recordlist to {{a:1, b:2}, {c:3, d:4}}
+		set longlist to {"a", "b", "c", "d", "e", "f", "g"}
+
 		set listlib to load script (POSIX file ((POSIX path of (path to me as string) & "/../../") & "list.scpt"))
 	end setUp
 end script
