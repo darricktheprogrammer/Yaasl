@@ -13,6 +13,7 @@ script BaseListTest
 	property shortlist : missing value
 	property recordlist : missing value
 	property longlist : missing value
+	property NO_ERROR : "0: no error"
 
 	on setUp()
 		set emptylist to {}
@@ -51,7 +52,7 @@ script ListToListManipulations
 		set badlist to my recordlist & my recordlist
 		try
 			set ls to my listlib's unique(badlist)
-			set errnum to "0: no error"
+			set errnum to my NO_ERROR
 		on error number errnum
 			set errnum to errnum
 		end try
@@ -71,5 +72,62 @@ script ListToListManipulations
 		end try
 
 		assertEqual(704, errnum)
+	end script
+
+
+	script insert_IntoFrontOfList_AddsItemToFrontOfList
+		property parent : UnitTest(me)
+		set ls to my listlib's insert("0", 1, my shortlist)
+		assertEqual({"0"} & my shortlist, ls)
+	end script
+
+	script insert_IntoBackOfList_AddsItemToBackOfList
+		property parent : UnitTest(me)
+		set ls to my listlib's insert("d", 4, my shortlist)
+		assertEqual(my shortlist & {"d"}, ls)
+	end script
+
+	script insert_IntoMiddleOfList_AddsItemToMiddleOfList
+		property parent : UnitTest(me)
+		set ls to my listlib's insert("z", 2, my shortlist)
+		assertEqual({"a", "z", "b", "c"}, ls)
+	end script
+
+	script insert_GivenZeroIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's insert("0", 0, my shortlist)
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script insert_GivenOutOfBoundsIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's insert("d", 5, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script insert_GivenNegativeIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's insert("d", -1, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script insert_IntoEmptyList_CreatesOneItemLIst
+		property parent : UnitTest(me)
+		set ls to my listlib's insert("a", 1, my emptylist)
+		assertEqual({"a"}, ls)
 	end script
 end script
