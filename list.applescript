@@ -173,3 +173,55 @@ end pop_index
 on pop(ls)
 	return pop_index(count ls, ls)
 end pop
+
+
+(**
+ * Get the index of the first occurrence of an item in a list.
+ *
+ * Applescript provides the `offset` command for strings, but does not provide
+ * a way to get the index of an item in a list. This provides that missing
+ * functionality.
+ *
+ * Returns 0 if the item is not found.
+ *
+ * @param [String, Number] The item to find in the list
+ * @param List The list in which to find the item
+ * @return Integer
+ *)
+on index_of(theItem, ls)
+	if class of theItem is in {record, list} then
+		set errmsg to "TypeError: cannot get index of "
+		set errmsg to errmsg & class of theItem & " items."
+		error errmsg number 704
+	else if theItem is not in ls then
+		return 0
+	end if
+
+	-- Looping through the list is a valid approach, but gets slow on larger
+	-- lists. By converting the list to a string, then splitting it on
+	-- the item, there is no degradation in speed no matter how big
+	-- the list gets.
+
+	--theBreaker is used as a placeholder between list items so the list can
+	--be broken up again later. The character combination should
+	--prove unique enough to never be run into when running a script.
+	set itemCount to (count ls)
+	set theBreaker to ")-+^+-("
+	set oldDelims to AppleScript's text item delimiters
+	set AppleScript's text item delimiters to theBreaker
+	set theText to ls as text
+	set AppleScript's text item delimiters to (theBreaker & theItem & theBreaker)
+	set splitList to text item 1 of theText
+	set AppleScript's text item delimiters to theBreaker
+	set splitList to text items of splitList
+	set AppleScript's text item delimiters to oldDelims
+	set theIndex to ((count splitList) + 1)
+
+	if theItem is item 1 of ls then
+		return 1
+	else if itemCount < theIndex then
+		return itemCount
+	else
+		return theIndex
+	end if
+end index_of
