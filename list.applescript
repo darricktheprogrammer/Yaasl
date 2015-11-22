@@ -85,3 +85,63 @@ on insert(theItem, ix, ls)
 	end if
 	return newList
 end insert
+
+
+(**
+ * Remove an item from a list at the given index and return it.
+ *
+ * Because an item cannot be deleted in place from a list, the return value
+ * will be a list containing both the popped value and the original list
+ * minus the popped item (`rest of list` if index is 1).
+ *
+ * The first item will be the popped value.
+ * The second value will be the updated list.
+ *
+ * If you just want to delete at an item at an index and do not care about
+ * the return value, you can run `pop_index()` and simply ignore the first
+ * return value.
+ *
+ * !!! warning: `pop_index()` does not support reverse indexing. You will
+ * receive an error for `pop_index(-1, ls)`. To reverse index you will need to
+ * pass the actual index number to be popped: `pop_index((count ls), ls)`
+ *
+ * @example -- Pop an item and get its value
+ *          listlib's pop_index(2, {"a", "b", "c"})
+ *          --> {"b", {"a", "c"}}
+ *
+ * @example -- Delete an item from a list, ignoring its return value
+ *          set {_, ls} to listlib's pop_index(2, {"a", "b", "c"})
+ *
+ * @throws IndexError (705)
+ * @param Integer The index to pop from the list
+ * @param List The list from which to pop the last value
+ * @return List
+ *)
+on pop_index(ix, ls)
+	if ix > (count ls) + 1 or ix = 0 then
+		if (count ls) = 1 then
+			set items_ to "item"
+		else
+			set items_ to "items"
+		end if
+		set errmsg to "IndexError: Cannot get item " & ix & " of list with "
+		set errmsg to errmsg & (count ls) & " " & items_ & "."
+		error errmsg number 705
+	else if ix < 1 then
+		set errmsg to "IndexError: pop_index does not support reverse indexing."
+		error errmsg number 705
+	else if ls is {} then
+		set errmsg to "IndexError: Cannot pop from empty list."
+		error errmsg number 705
+	end if
+
+	if ix is 1 then
+		return {item 1 of ls, rest of ls}
+	else if ix is (count ls) then
+		return {item -1 of ls, items 1 thru -2 of ls}
+	else
+		set front_ to items 1 thru (ix - 1) of ls
+		set back_ to items (ix + 1) thru -1 of ls
+		return {item ix of ls, front_ & back_}
+	end if
+end pop_index
