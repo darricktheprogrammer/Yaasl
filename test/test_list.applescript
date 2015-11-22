@@ -204,4 +204,33 @@ script ListToListManipulations
 		end try
 		assertEqual(errnum, 704)
 	end script
+
+
+	script pop_GivenList_PopsLastItem
+		property parent : UnitTest(me)
+		set ls to my listlib's pop(my shortlist)
+		assertEqual({"c", {"a", "b"}}, ls)
+	end script
+
+	script pop_GivenNotAList_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop("A string")
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 704)
+	end script
+
+	script pop_EmptyList_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop(my emptylist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
 end script
