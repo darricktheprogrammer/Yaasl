@@ -233,6 +233,30 @@ script ListToListManipulations
 		end try
 		assertEqual(errnum, 705)
 	end script
+
+
+	script remove_ItemInList_RemovesItem
+		property parent : UnitTest(me)
+		set ls to my listlib's remove("a", my shortlist)
+		assertEqual(rest of my shortlist, ls)
+	end script
+
+	script remove_ItemNotInList_ReturnsUnchangedList
+		property parent : UnitTest(me)
+		set ls to my listlib's remove("d", my shortlist)
+		assertEqual(my shortlist, ls)
+	end script
+
+	script remove_RecordItem_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's remove(item 1 of my recordlist, my recordlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
 end script
 
 
