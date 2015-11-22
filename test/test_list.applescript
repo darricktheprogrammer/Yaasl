@@ -234,3 +234,50 @@ script ListToListManipulations
 		assertEqual(errnum, 705)
 	end script
 end script
+
+
+script ListInformation
+	property parent : BaseListTest
+
+	script indexOf_TextItem_ReturnsIndex
+		property parent : UnitTest(me)
+		set ix to my listlib's index_of("a", my shortlist)
+		assertEqual(1, ix)
+	end script
+
+	script indexOf_NumberItem_ReturnsIndex
+		property parent : UnitTest(me)
+		set ix to my listlib's index_of(1, {1, 2, 3})
+		assertEqual(1, ix)
+	end script
+
+	script indexOf_RecordItem_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ix to my listlib's index_of(item 1 of my recordlist, my recordlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
+
+	script indexOf_EmptyList_ReturnsZero
+		property parent : UnitTest(me)
+		set ix to my listlib's index_of("a", {})
+		assertEqual(0, ix)
+	end script
+
+	script indexOf_ItemNotInList_ReturnsZero
+		property parent : UnitTest(me)
+		set ix to my listlib's index_of("d", my shortlist)
+		assertEqual(0, ix)
+	end script
+
+	script indexOf_ItemInListMultipleTimes_ReturnsFirstOccurence
+		property parent : UnitTest(me)
+		set ls to my shortlist & my shortlist
+		set ix to my listlib's index_of("a", ls)
+		assertEqual(1, ix)
+	end script
+end script
