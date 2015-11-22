@@ -149,3 +149,27 @@ on pop_index(ix, ls)
 		return {item ix of ls, front_ & back_}
 	end if
 end pop_index
+
+
+(**
+ * Remove the last item from a list and return it.
+ *
+ * Acts as a shortcut for `pop_index((count ls), ls)`
+ *
+ * Because an item cannot be deleted in place from a list, the return value
+ * will be a list containing both the popped value and the original list
+ * minus the last item (items 1 thru -2 of the list).
+ *
+ * The first item will be the popped value.
+ * The second value will be the updated list.
+ *
+ * @example listlib's pop({"a", "b", "c"})
+ *          --> {"c", {"a", "b"}}
+ *
+ * @throws IndexError (705)
+ * @param List The list from which to pop the last value
+ * @return List
+ *)
+on pop(ls)
+	return pop_index(count ls, ls)
+end pop
