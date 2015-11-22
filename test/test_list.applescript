@@ -193,4 +193,15 @@ script ListToListManipulations
 		end try
 		assertEqual(errnum, 705)
 	end script
+
+	script popIndex_GivenNotAList_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(1, "A string")
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 704)
+	end script
 end script

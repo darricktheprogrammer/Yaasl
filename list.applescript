@@ -133,6 +133,10 @@ on pop_index(ix, ls)
 	else if ls is {} then
 		set errmsg to "IndexError: Cannot pop from empty list."
 		error errmsg number 705
+	else if class of ls is not list then
+		set errmsg to "TypeError: Cannot pop item from item whose class is "
+		set errmsg to errmsg & class of ls & "."
+		error errmsg number 704
 	end if
 
 	if ix is 1 then
