@@ -225,3 +225,21 @@ on index_of(theItem, ls)
 		return theIndex
 	end if
 end index_of
+
+
+(**
+ * Remove the first occurrence of an item from a list.
+ *
+ * If the item is not present in the list, the list will remain unchanged.
+ *
+ * @param [String, Number] The item to remove
+ * @param List The list from which to remove the item.
+ * @return List
+ *)
+on remove(theItem, ls)
+	set ix to index_of(theItem, ls)
+	if ix = 0 then
+		return ls
+	end if
+	return item 2 of pop_index(ix, ls)
+end remove
