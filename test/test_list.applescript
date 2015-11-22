@@ -130,4 +130,67 @@ script ListToListManipulations
 		set ls to my listlib's insert("a", 1, my emptylist)
 		assertEqual({"a"}, ls)
 	end script
+
+
+	script popIndex_PopFirstItem_PopsFirstItem
+		property parent : UnitTest(me)
+		set ls to my listlib's pop_index(1, my shortlist)
+		assertEqual({"a", {"b", "c"}}, ls)
+	end script
+
+	script popIndex_PopLastItem_PopsLastItem
+		property parent : UnitTest(me)
+		set ls to my listlib's pop_index(3, my shortlist)
+		assertEqual({"c", {"a", "b"}}, ls)
+	end script
+
+	script popIndex_PopMiddleItem_PopsMiddleItem
+		property parent : UnitTest(me)
+		set ls to my listlib's pop_index(2, my shortlist)
+		assertEqual({"b", {"a", "c"}}, ls)
+	end script
+
+	script popIndex_EmptyList_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(1, my emptylist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
+
+	script popIndex_GivenOutOfBoundsIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(5, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
+
+	script popIndex_GivenZeroIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(0, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
+
+	script popIndex_GivenNegativeIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(-1, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
 end script
