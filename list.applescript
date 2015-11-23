@@ -284,3 +284,41 @@ on diff(l1, l2)
 	end repeat
 	return l3
 end diff
+
+
+(**
+ * Return only the values of the first list also contained in the second list.
+ *
+ * Basically the opposite of `diff()`
+ *
+ * @example diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
+ *          --> {"a", "b"}
+ *
+ * @param List The first list to compare.
+ *        This is where the result set will come from.
+ * @param List The list that is being compared to
+ * @return List
+ *)
+on intersect(l1, l2)
+	repeat with i from 1 to (count l2)
+		if class of item i of l2 is in {record, list} then
+			set errmsg to "TypeError: cannot diff lists containing "
+			set errmsg to errmsg & class of item i of l2 & " items."
+			error errmsg number 704
+		end if
+	end repeat
+
+	set l3 to {}
+	repeat with i from 1 to (count l1)
+		set theItem to item i of l1
+
+		if class of theItem is in {record, list} then
+			set errmsg to "TypeError: cannot diff lists containing "
+			set errmsg to errmsg & class of theItem & " items."
+			error errmsg number 704
+		else if theItem is in l2 then
+			set end of l3 to theItem
+		end if
+	end repeat
+	return l3
+end intersect
