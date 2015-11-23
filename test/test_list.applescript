@@ -257,6 +257,47 @@ script ListToListManipulations
 		end try
 		assertEqual(704, errnum)
 	end script
+	
+	
+	script diff_DifferentLists_ReturnsDiff
+		property parent : UnitTest(me)
+		set ls to my listlib's diff(my longlist, my shortlist)
+		assertEqual({"d", "e", "f", "g"}, ls)
+	end script
+	
+	script diff_SameList_ReturnsEmptyList
+		property parent : UnitTest(me)
+		set ls to my listlib's diff(my shortlist, my shortlist)
+		assertEqual({}, ls)
+	end script
+	
+	script diff_NoOverlap_ReturnsOriginalList
+		property parent : UnitTest(me)
+		set ls to my listlib's diff(my shortlist, {})
+		assertEqual(my shortlist, ls)
+	end script
+	
+	script diff_FirstListContainsRecord_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's diff(my recordlist, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
+	
+	script diff_SecondListContainsRecord_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's diff(my shortlist, my recordlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
 end script
 
 
