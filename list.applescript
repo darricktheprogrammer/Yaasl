@@ -243,3 +243,44 @@ on remove(theItem, ls)
 	end if
 	return item 2 of pop_index(ix, ls)
 end remove
+
+
+(**
+ * Return the values of the first list that are not present in the second list.
+ *
+ * Because of Applescript comparison limitations, records and lists are not
+ * supported by this routine. Any lists containing a record or list will throw
+ * a TypeError.
+ *
+ * @example diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
+ *          --> {"c", "d"}
+ *
+ * @throws TypeError (704)
+ * @param List The first list to compare.
+ *        This is where the result set will come from.
+ * @param List The list that is being compared to
+ * @return List
+ *)
+on diff(l1, l2)
+	repeat with i from 1 to (count l2)
+		if class of item i of l2 is in {record, list} then
+			set errmsg to "TypeError: cannot diff lists containing "
+			set errmsg to errmsg & class of item i of l2 & " items."
+			error errmsg number 704
+		end if
+	end repeat
+
+	set l3 to {}
+	repeat with i from 1 to (count l1)
+		set theItem to item i of l1
+
+		if class of theItem is in {record, list} then
+			set errmsg to "TypeError: cannot diff lists containing "
+			set errmsg to errmsg & class of theItem & " items."
+			error errmsg number 704
+		else if theItem is not in l2 then
+			set end of l3 to theItem
+		end if
+	end repeat
+	return l3
+end diff
