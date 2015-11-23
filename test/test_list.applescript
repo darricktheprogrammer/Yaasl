@@ -298,6 +298,47 @@ script ListToListManipulations
 		end try
 		assertEqual(704, errnum)
 	end script
+	
+	
+	script intersect_DifferentLists_ReturnsIntersectingPortion
+		property parent : UnitTest(me)
+		set ls to my listlib's intersect(my longlist, my shortlist)
+		assertEqual({"a", "b", "c"}, ls)
+	end script
+	
+	script intersect_SameList_ReturnsSameList
+		property parent : UnitTest(me)
+		set ls to my listlib's intersect(my shortlist, my shortlist)
+		assertEqual(my shortlist, ls)
+	end script
+	
+	script intersect_NoOverlap_ReturnsEmptyList
+		property parent : UnitTest(me)
+		set ls to my listlib's intersect(my shortlist, {})
+		assertEqual({}, ls)
+	end script
+	
+	script intersect_FirstListContainsRecord_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's intersect(my recordlist, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
+	
+	script intersect_SecondListContainsRecord_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's intersect(my shortlist, my recordlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(704, errnum)
+	end script
 end script
 
 
