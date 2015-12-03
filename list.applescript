@@ -364,3 +364,59 @@ on move_item(ls, oldindex, newindex)
 	set ls2 to insert(val, newindex, ls2)
 	return ls2
 end move_item
+
+
+(**
+ * Sort a list.
+ *
+ * This is the quicksort routine taken from Kevin Bradley's Nite Flite library.
+ * http://mac.brothersoft.com/nite-flite-script-library.html
+ *
+ * @param List The list to sort
+ * @return List
+ *)
+on sort(theList)
+	--public routine, called from your script
+	script bs
+		property alist : theList
+		
+		on Qsort(leftIndex, rightIndex)
+			--private routine called by quickSort.
+			--do not call from your script!
+			if rightIndex > leftIndex then
+				set pivot to ((rightIndex - leftIndex) div 2) + leftIndex
+				set newPivot to Qpartition(leftIndex, rightIndex, pivot)
+				set theList to Qsort(leftIndex, newPivot - 1)
+				set theList to Qsort(newPivot + 1, rightIndex)
+			end if
+			
+		end Qsort
+		
+		on Qpartition(leftIndex, rightIndex, pivot)
+			--private routine called by quickSort.
+			--do not call from your script!
+			set pivotValue to item pivot of bs's alist
+			set temp to item pivot of bs's alist
+			set item pivot of bs's alist to item rightIndex of bs's alist
+			set item rightIndex of bs's alist to temp
+			set tempIndex to leftIndex
+			repeat with pointer from leftIndex to (rightIndex - 1)
+				if item pointer of bs's alist ≤ pivotValue then
+					set temp to item pointer of bs's alist
+					set item pointer of bs's alist to item tempIndex of bs's alist
+					set item tempIndex of bs's alist to temp
+					set tempIndex to tempIndex + 1
+				end if
+			end repeat
+			set temp to item rightIndex of bs's alist
+			set item rightIndex of bs's alist to item tempIndex of bs's alist
+			set item tempIndex of bs's alist to temp
+			
+			return tempIndex
+		end Qpartition
+		
+	end script
+	
+	if length of bs's alist > 1 then bs's Qsort(1, length of bs's alist)
+	return bs's alist
+end sort

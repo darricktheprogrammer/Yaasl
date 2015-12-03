@@ -459,6 +459,12 @@ script ListToListManipulations
 		end try
 		assertEqual(705, errnum)
 	end script
+
+	script sort_OutOfOrderList_SortsList
+		property parent : UnitTest(me)
+		set ls to my listlib's sort({"c", "a", "b"})
+		assertEqual({"a", "b", "c"}, ls)
+	end script
 end script
 
 
