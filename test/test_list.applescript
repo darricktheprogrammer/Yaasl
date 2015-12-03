@@ -179,6 +179,17 @@ script ListToListManipulations
 		assertEqual(errnum, 705)
 	end script
 
+	script popIndex_GivenCountOfListPlusOneIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's pop_index(4, my shortlist)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(errnum, 705)
+	end script
+
 	script popIndex_GivenOutOfBoundsIndex_ThrowsError
 		property parent : UnitTest(me)
 		try
