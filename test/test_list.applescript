@@ -93,6 +93,24 @@ script ListToListManipulations
 		assertEqual({"a", "z", "b", "c"}, ls)
 	end script
 
+	script insert_RecordAtEnd_InsertsRecord
+		property parent : UnitTest(me)
+		set ls to my listlib's insert({e:5, f:6}, 4, my shortlist)
+		assertEqual({"a", "b", "c", {e:5, f:6}}, ls)
+	end script
+
+	script insert_RecordAtBeginning_InsertsRecord
+		property parent : UnitTest(me)
+		set ls to my listlib's insert({e:5, f:6}, 1, my shortlist)
+		assertEqual({{e:5, f:6}, "a", "b", "c"}, ls)
+	end script
+
+	script insert_RecordInMiddle_InsertsRecord
+		property parent : UnitTest(me)
+		set ls to my listlib's insert({e:5, f:6}, 2, my shortlist)
+		assertEqual({"a", {e:5, f:6}, "b", "c"}, ls)
+	end script
+
 	script insert_GivenZeroIndex_ThrowsError
 		property parent : UnitTest(me)
 		try
@@ -357,6 +375,12 @@ script ListToListManipulations
 		property parent : UnitTest(me)
 		set ls to my listlib's move_item(my shortlist, 2, 1)
 		assertEqual({"b", "a", "c"}, ls)
+	end script
+
+	script MoveItem_MoveRecord_MovesRecord
+		property parent : UnitTest(me)
+		set ls to my listlib's move_item(my recordlist, 1, 2)
+		assertEqual({{c:3, d:4}, {a:1, b:2}}, ls)
 	end script
 
 	script MoveItem_GivenNegativeIndexAsItemIndex_ThrowsError

@@ -71,7 +71,13 @@ on insert(theItem, ix, ls)
 	if errmsg is not missing value then
 		error errmsg number 705
 	end if
-
+	
+	-- Records get coerced to a list when being added, which just extracts
+	-- their values. So only their values are inserted, not the record.
+	if class of theItem is record then
+		set theItem to {theItem}
+	end if
+	
 	if ix is 1 then
 		set newList to (theItem as list) & ls
 	else if ix is ((count ls) + 1) then
