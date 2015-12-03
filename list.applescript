@@ -118,7 +118,7 @@ end insert
  * @return List
  *)
 on pop_index(ix, ls)
-	if ix > (count ls) + 1 or ix = 0 then
+	if ix > (count ls) or ix = 0 then
 		if (count ls) = 1 then
 			set items_ to "item"
 		else
@@ -322,3 +322,39 @@ on intersect(l1, l2)
 	end repeat
 	return l3
 end intersect
+
+
+(**
+ * Move an item from one spot in the list to another.
+ *
+ * Note that `move_item` removes the item from the list _first_, then readds it
+ * in the desired location. So, if you want to move an item to the end of a
+ * 3 item list, you would specify `3` as the `targetIndex`, not `4`.
+ *
+ * @example move_item({"a", "b", "c"}, 1, 3)
+ *          --> {"b", "c", "a"}
+ * @example move_item({"a", "b", "c"}, 1, 4)
+ *          --> IndexError: Cannot insert item at index 4 when list has 2 items. (705)
+ *
+ * @param List The list containing the element
+ * @param Integer The index of the item to move
+ * @param Integer The index to where the item should be moved
+ *)
+on move_item(ls, oldindex, newindex)
+	if oldindex < 0 or newindex < 0 then
+		set errmsg to "IndexError: move_item does not support reverse indexing."
+		error errmsg number 705
+	else if (newindex > (count ls)) then
+		if (count ls) = 1 then
+			set items_ to "item"
+		else
+			set items_ to "items"
+		end if
+		set errmsg to "IndexError: Cannot insert item at index " & newindex
+		set errmsg to errmsg & " when list has " & (count ls) & " " & items_ & "."
+		error errmsg number 705
+	end if
+	set {val, ls2} to pop_index(oldindex, ls)
+	set ls2 to insert(val, newindex, ls2)
+	return ls2
+end move_item

@@ -339,6 +339,91 @@ script ListToListManipulations
 		end try
 		assertEqual(704, errnum)
 	end script
+
+
+	script MoveItem_FromFrontToBack_MovesItem
+		property parent : UnitTest(me)
+		set ls to my listlib's move_item(my shortlist, 1, 3)
+		assertEqual({"b", "c", "a"}, ls)
+	end script
+
+	script MoveItem_ToSameSpot_ReturnsSameList
+		property parent : UnitTest(me)
+		set ls to my listlib's move_item(my shortlist, 2, 2)
+		assertEqual(my shortlist, ls)
+	end script
+
+	script MoveItem_ToBeginning_MovesItem
+		property parent : UnitTest(me)
+		set ls to my listlib's move_item(my shortlist, 2, 1)
+		assertEqual({"b", "a", "c"}, ls)
+	end script
+
+	script MoveItem_GivenNegativeIndexAsItemIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, -1, 3)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script MoveItem_GivenNegativeIndexAsTargetIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, 1, -1)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script MoveItem_GivenZeroAsOriginalIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, 0, 3)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script MoveItem_GivenZeroAsTargetIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, 1, 0)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script MoveItem_GivenOutOfBoundsOriginalIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, 4, 0)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
+
+	script MoveItem_GivenOutOfBoundsTargetIndex_ThrowsError
+		property parent : UnitTest(me)
+		try
+			set ls to my listlib's move_item(my shortlist, 1, 4)
+			set errnum to my NO_ERROR
+		on error number errnum
+			set errnum to errnum
+		end try
+		assertEqual(705, errnum)
+	end script
 end script
 
 
