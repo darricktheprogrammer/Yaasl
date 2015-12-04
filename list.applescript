@@ -420,3 +420,20 @@ on sort(theList)
 	if length of bs's alist > 1 then bs's Qsort(1, length of bs's alist)
 	return bs's alist
 end sort
+
+
+(**
+ * Count the amount of times an item appears in a list.
+ *
+ * @param Any The item to find
+ * @param type Description
+ *)
+on count_instances(value, ls)
+	set counter to 0
+	repeat with i from 1 to (count ls)
+		if item i of ls is value then
+			set counter to counter + 1
+		end if
+	end repeat
+	return counter
+end count_instances

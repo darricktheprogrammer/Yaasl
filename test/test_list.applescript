@@ -512,4 +512,28 @@ script ListInformation
 		set ix to my listlib's index_of("a", ls)
 		assertEqual(1, ix)
 	end script
+	
+	script CountInstances_FoundOnce_Returns1
+		property parent : UnitTest(me)
+		set instanceCount to my listlib's count_instances("a", my shortlist)
+		assertEqual(1, instanceCount)
+	end script
+	
+	script CountInstances_FoundTwice_Returns2
+		property parent : UnitTest(me)
+		set instanceCount to my listlib's count_instances("a", my shortlist & my shortlist)
+		assertEqual(2, instanceCount)
+	end script
+	
+	script CountInstances_NotInList_Returns0
+		property parent : UnitTest(me)
+		set instanceCount to my listlib's count_instances("d", my shortlist)
+		assertEqual(0, instanceCount)
+	end script
+	
+	script CountInstances_LookingForRecord_ReturnsCount
+		property parent : UnitTest(me)
+		set instanceCount to my listlib's count_instances({a:1, b:2}, my recordlist)
+		assertEqual(1, instanceCount)
+	end script
 end script
