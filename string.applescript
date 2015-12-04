@@ -23,7 +23,8 @@ property ASCII_LETTERS : ASCII_LOWERCASE & ASCII_UPPERCASE
 property SPECIAL_CHARS : "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
 (**Whitespace characters tab, space, return, and linefeed*)
-property WHITESPACE : " \t\r\n"
+property WHITESPACE : " 	
+"
 
 
 (**
@@ -34,7 +35,7 @@ property WHITESPACE : " \t\r\n"
  * @return List
  *)
 on split(str, delimiter)
-	if str is ""
+	if str is "" then
 		return {str}
 	end if
 	set AppleScript's text item delimiters to delimiter
@@ -147,12 +148,12 @@ end title_case
  * @return String
  *)
 on sentence_case(str)
-	if str is ""
+	if str is "" then
 		return str
 	end if
-
+	
 	set punctbreaks to {". ", ".  ", "! ", "!  ", "? ", "?  "}
-
+	
 	repeat with i from 1 to (count punctbreaks)
 		set sentences to my split(str, item i of punctbreaks)
 		repeat with j from 1 to (count sentences)
@@ -193,24 +194,24 @@ end convert_case
  * @return String
  *)
 on trim(str)
-	if str is ""
+	if str is "" then
 		return str
 	end if
-
+	
 	repeat with i from 1 to (count str)
-		if item i of str is not in WHITESPACE
+		if item i of str is not in WHITESPACE then
 			set strstart to i
 			exit repeat
 		end if
 	end repeat
-
+	
 	repeat with i from (count str) to 1 by -1
-		if item i of str is not in WHITESPACE
+		if item i of str is not in WHITESPACE then
 			set strend to i
 			exit repeat
 		end if
 	end repeat
-
+	
 	return text strstart thru strend of str
 end trim
 
@@ -224,7 +225,7 @@ end trim
  *)
 on pad_left(str, padwidth)
 	return pad_left_with_char(" ", str, padwidth)
-end padLeft
+end pad_left
 
 
 (**
@@ -236,7 +237,7 @@ end padLeft
  *)
 on pad_right(str, padwidth)
 	return pad_right_with_char(" ", str, padwidth)
-end padLeft
+end pad_right
 
 
 (**
@@ -248,10 +249,10 @@ end padLeft
  * @return String
  *)
 on pad_left_with_char(char, str, padwidth)
-	if (count char) > 1
+	if (count char) > 1 then
 		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
 	end if
-
+	
 	set padcount to padwidth - (count str)
 	repeat with i from 1 to padcount
 		set str to char & str
@@ -269,16 +270,16 @@ end pad_left_with_char
  * @return String
  *)
 on pad_right_with_char(char, str, padwidth)
-	if (count char) > 1
+	if (count char) > 1 then
 		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
 	end if
-
+	
 	set padcount to padwidth - (count str)
 	repeat with i from 1 to padcount
 		set str to str & char
 	end repeat
 	return str
-end pad_left_with_char
+end pad_right_with_char
 
 
 (**
@@ -317,7 +318,7 @@ on format(str, args)
 	
 	-- Make sure the amount of args matches the amount of braces
 	set {braceCount, argcount} to {(count parts) - 1, count args}
-	if braceCount â‰  argcount then
+	if braceCount ­ argcount then
 		set errmsg to format("Expected {} arguments, but received {}.", {braceCount, argcount})
 		error errmsg number 702
 	end if
