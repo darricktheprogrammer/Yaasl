@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns":
+			[
+				"*.scpt",
+				"LICENSE",
+				"README.md",
+				"*.sublime-project"
+			]
+		}
+	]
+}
