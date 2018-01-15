@@ -437,3 +437,73 @@ on count_instances(value, ls)
 	end repeat
 	return counter
 end count_instances
+
+
+(**
+ * Zip lists together, creating a list of n-item lists, where n = (count lists).
+ *
+ * Iterate through each of the given lists, adding their current values to an
+ * n-item list. If no lists are given (`zip_many()` receives a zero-item list),
+ * an empty list will be returned.
+ *
+ * If the lists are not the same length, the shortest will be used as the
+ * iteration count, and the remaining items of the longer lists
+ * will be thrown away.
+ *
+ * @example
+ * 		zip_many({})
+ * 		--> {}
+ * @example
+ * 		set l1 to {"a", "b", "c"}
+ * 		set l2 to {"d", "e", "f"}
+ * 		set l3 to {1, 2, 3}
+ * 		zip_many({l1, l2, l3})
+ * 		--> {{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}
+ * @example
+ * 		set l1 to {"a", "b", "c"}
+ * 		set l2 to {"d", "e", "f"}
+ * 		set l3 to {"1"}
+ * 		zip_many({l1, l2, l3})
+ * 		--> {{"a", "d", 1}}
+ *
+ * @param List A list of lists
+ * @return List
+ *)
+on zip_many(ls)
+	if (count ls) = 0 then
+		return {}
+	end if
+
+	-- Find the shortest list to use as iteration reference
+	set shortest to item 1 of ls
+	repeat with l in ls
+		if (count l) < (count shortest) then
+			set shortest to l
+		end if
+	end repeat
+
+	set zipped to {}
+	set item_count to count shortest
+	repeat with i from 1 to item_count
+		set entry to {}
+		repeat with j from 1 to (count ls)
+			set end of entry to item i of item j of ls
+		end repeat
+		set end of zipped to entry
+	end repeat
+	return zipped
+end zip_many
+
+
+(**
+ * Zip two lists together, creating a list of 2-item lists.
+ *
+ * Works the same way as `zip_many()` except for only two lists.
+ *
+ * @param List
+ * @param List
+ * @return List
+ *)
+on zip(ls1, ls2)
+	return zip_many({ls1, ls2})
+end zip

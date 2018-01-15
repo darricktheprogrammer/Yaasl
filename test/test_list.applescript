@@ -538,3 +538,88 @@ script ListInformation
 	end script
 end script
 
+
+script FunctionalRoutines
+	property parent : BaseListTest
+
+	script zipMany_ZeroItemList_ReturnsEmptyList
+		property parent : UnitTest(me)
+		set ls to my listlib's zip_many({})
+		assertEqual({}, ls)
+	end script
+
+	script zipMany_MixedClassLists_ZipsLists
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {"d", "e", "f"}
+		set l3 to {1, 2, 3}
+		set zipped to my listlib's zip_many({l1, l2, l3})
+		assertEqual({{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}, zipped)
+	end script
+
+	script zipMany_FirstListShorter_ZipsToShorterLength
+		property parent : UnitTest(me)
+		set l1 to {"a"}
+		set l2 to {"d", "e", "f"}
+		set l3 to {1, 2, 3}
+		set zipped to my listlib's zip_many({l1, l2, l3})
+		assertEqual({{"a", "d", 1}}, zipped)
+	end script
+
+	script zipMany_OtherListShorter_ZipsToShorterLength
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {"d", "e", "f"}
+		set l3 to {1}
+		set zipped to my listlib's zip_many({l1, l2, l3})
+		assertEqual({{"a", "d", 1}}, zipped)
+	end script
+
+	script zipMany_GivenRecord_ZipsLists
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {{a:1}, {b:2}, {c:3}}
+		set l3 to {1, 2, 3}
+		set zipped to my listlib's zip_many({l1, l2, l3})
+		assertEqual({{"a", {a:1}, 1}, {"b", {b:2}, 2}, {"c", {c:3}, 3}}, zipped)
+	end script
+
+
+	script zip_ZeroItemList_ReturnsEmptyList
+		property parent : UnitTest(me)
+		set ls to my listlib's zip({}, {})
+		assertEqual({}, ls)
+	end script
+
+	script zip_MixedClassLists_ZipsLists
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {1, 2, 3}
+		set zipped to my listlib's zip(l1, l2)
+		assertEqual({{"a", 1}, {"b", 2}, {"c", 3}}, zipped)
+	end script
+
+	script zip_FirstListShorter_ZipsToShorterLength
+		property parent : UnitTest(me)
+		set l1 to {"a"}
+		set l2 to {1, 2, 3}
+		set zipped to my listlib's zip(l1, l2)
+		assertEqual({{"a", 1}}, zipped)
+	end script
+
+	script zip_OtherListShorter_ZipsToShorterLength
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {1}
+		set zipped to my listlib's zip(l1, l2)
+		assertEqual({{"a", 1}}, zipped)
+	end script
+
+	script zip_GivenRecord_ZipsLists
+		property parent : UnitTest(me)
+		set l1 to {"a", "b", "c"}
+		set l2 to {{a:1}, {b:2}, {c:3}}
+		set zipped to my listlib's zip(l1, l2)
+		assertEqual({{"a", {a:1}}, {"b", {b:2}}, {"c", {c:3}}}, zipped)
+	end script
+end script
