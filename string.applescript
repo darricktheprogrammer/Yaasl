@@ -23,7 +23,7 @@ property ASCII_LETTERS : ASCII_LOWERCASE & ASCII_UPPERCASE
 property SPECIAL_CHARS : "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
 (**Whitespace characters tab, space, return, and linefeed*)
-property WHITESPACE : " 	
+property WHITESPACE : "
 "
 
 
@@ -120,7 +120,7 @@ end to_upper
 on title_case(str)
 	set stopwords to {"a", "an", "in", "the", "and", "but", "for", "or", "nor", "to"}
 	set allWords to my split(str, space)
-	
+
 	set fixedWords to {}
 	repeat with i from 1 to (count allWords)
 		set currWord to item i of allWords
@@ -151,9 +151,9 @@ on sentence_case(str)
 	if str is "" then
 		return str
 	end if
-	
+
 	set punctbreaks to {". ", ".  ", "! ", "!  ", "? ", "?  "}
-	
+
 	repeat with i from 1 to (count punctbreaks)
 		set sentences to my split(str, item i of punctbreaks)
 		repeat with j from 1 to (count sentences)
@@ -197,21 +197,21 @@ on trim(str)
 	if str is "" then
 		return str
 	end if
-	
+
 	repeat with i from 1 to (count str)
 		if item i of str is not in WHITESPACE then
 			set strstart to i
 			exit repeat
 		end if
 	end repeat
-	
+
 	repeat with i from (count str) to 1 by -1
 		if item i of str is not in WHITESPACE then
 			set strend to i
 			exit repeat
 		end if
 	end repeat
-	
+
 	return text strstart thru strend of str
 end trim
 
@@ -252,7 +252,7 @@ on pad_left_with_char(char, str, padwidth)
 	if (count char) > 1 then
 		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
 	end if
-	
+
 	set padcount to padwidth - (count str)
 	repeat with i from 1 to padcount
 		set str to char & str
@@ -273,7 +273,7 @@ on pad_right_with_char(char, str, padwidth)
 	if (count char) > 1 then
 		error "Cannot pad with character " & quoted form of char & ". Can only pad with a single character." number 701
 	end if
-	
+
 	set padcount to padwidth - (count str)
 	repeat with i from 1 to padcount
 		set str to str & char
@@ -313,16 +313,16 @@ on format(str, args)
 	if class of args is not list then
 		set args to {args}
 	end if
-	
+
 	set parts to split(str, "{}")
-	
+
 	-- Make sure the amount of args matches the amount of braces
 	set {braceCount, argcount} to {(count parts) - 1, count args}
 	if braceCount ­ argcount then
 		set errmsg to format("Expected {} arguments, but received {}.", {braceCount, argcount})
 		error errmsg number 702
 	end if
-	
+
 	set formatted to {}
 	set partLen to (count parts)
 	repeat with i from 1 to partLen
@@ -331,6 +331,6 @@ on format(str, args)
 			set end of formatted to (item i of args as string)
 		end if
 	end repeat
-	
+
 	return search_and_replace(formatted as string, "{*}", "{}")
 end format

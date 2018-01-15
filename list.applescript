@@ -71,13 +71,13 @@ on insert(theItem, ix, ls)
 	if errmsg is not missing value then
 		error errmsg number 705
 	end if
-	
+
 	-- Records get coerced to a list when being added, which just extracts
 	-- their values. So only their values are inserted, not the record.
 	if class of theItem is record then
 		set theItem to {theItem}
 	end if
-	
+
 	if ix is 1 then
 		set newList to (theItem as list) & ls
 	else if ix is ((count ls) + 1) then
@@ -379,7 +379,7 @@ on sort(theList)
 	--public routine, called from your script
 	script bs
 		property alist : theList
-		
+
 		on Qsort(leftIndex, rightIndex)
 			--private routine called by quickSort.
 			--do not call from your script!
@@ -389,9 +389,9 @@ on sort(theList)
 				set theList to Qsort(leftIndex, newPivot - 1)
 				set theList to Qsort(newPivot + 1, rightIndex)
 			end if
-			
+
 		end Qsort
-		
+
 		on Qpartition(leftIndex, rightIndex, pivot)
 			--private routine called by quickSort.
 			--do not call from your script!
@@ -411,12 +411,12 @@ on sort(theList)
 			set temp to item rightIndex of bs's alist
 			set item rightIndex of bs's alist to item tempIndex of bs's alist
 			set item tempIndex of bs's alist to temp
-			
+
 			return tempIndex
 		end Qpartition
-		
+
 	end script
-	
+
 	if length of bs's alist > 1 then bs's Qsort(1, length of bs's alist)
 	return bs's alist
 end sort
