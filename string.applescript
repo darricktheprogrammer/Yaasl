@@ -4,7 +4,7 @@
  * Darrick Herwehe http://www.exitcodeone.com
  *)
 
-property version : 1.0
+property version : "1.0"
 
 
 (**Ascii lowercase letters a-z*)
