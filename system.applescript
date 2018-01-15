@@ -52,10 +52,10 @@ on path_parts(pth)
 	if class of pth is alias then
 		set pth to pth as string
 	end if
-	
+
 	--Get the character that separates each folder
 	set {colon, backslash, slash} to {":", "/", "\\"}
-	
+
 	if pth contains colon then
 		set separator to colon
 	else if pth contains backslash then
@@ -65,12 +65,12 @@ on path_parts(pth)
 	else
 		set separator to colon
 	end if
-	
+
 	--Remove trailing separator from folders
 	if pth ends with separator then
 		set pth to items 1 thru -2 of pth as string
 	end if
-	
+
 	set parts to _split(pth, separator)
 	if ((count parts) > 1) then
 		set parentdir to _join(items 1 thru -2 of parts, separator)
@@ -82,7 +82,7 @@ on path_parts(pth)
 			set filename to item 1 of splitfilename
 			set extension to ""
 		end if
-		
+
 		if parentdir is "" then
 			set parentdir to separator
 		end if
@@ -91,7 +91,7 @@ on path_parts(pth)
 		set filename to pth
 		set extension to ""
 	end if
-	
+
 	return {parentdir, filename, extension}
 end path_parts
 
@@ -100,12 +100,12 @@ end path_parts
 on parent_dir(pth)
 	set pth to _ensure_path_is_string(pth)
 	set separator to _separator_of(pth)
-	
+
 	--Remove trailing separator from folders or else the same folder is returned
 	if pth ends with separator then
 		set pth to text 1 thru -2 of pth
 	end if
-	
+
 	set parts to _split(pth, separator)
 	if ((count parts) > 1) then
 		return _join(items 1 thru -2 of parts, separator)
