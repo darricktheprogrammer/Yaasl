@@ -125,6 +125,31 @@ script PathData
 		set parts to my systemlib's path_parts("test")
 		assertEqual({"", "test", ""}, parts)
 	end script
+
+
+	script DiskOf_GivenPosixPath_ReturnsDisk
+		property parent : UnitTest(me)
+		set disk_name to my systemlib's disk_of("/Volumes/diskname/dir/file.txt")
+		assertEqual("diskname", disk_name)
+	end script
+
+	script DiskOf_GivenHFSPathToConnectedDisk_ReturnsDisk
+		property parent : UnitTest(me)
+		set disk_name to my systemlib's disk_of("Macintosh HD:Users:dir:file.txt")
+		assertEqual("Macintosh HD", disk_name)
+	end script
+
+	script DiskOf_GivenHFSPathToUnconnectedDisk_ReturnsDisk
+		property parent : UnitTest(me)
+		set disk_name to my systemlib's disk_of("diskname:Users:dir:file.txt")
+		assertEqual("diskname", disk_name)
+	end script
+
+	script DiskOf_GivenHFSPosixFile_ReturnsDisk
+		property parent : UnitTest(me)
+		set disk_name to my systemlib's disk_of("Macintosh HD:Volumes:diskname:dir:file.txt")
+		assertEqual("diskname", disk_name)
+	end script
 end script
 
 

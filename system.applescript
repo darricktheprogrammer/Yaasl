@@ -114,6 +114,25 @@ on parent_dir(pth)
 end parent_dir
 
 
+(**
+ * Extract the volume/disk name from a path.
+ *
+ * @param [String, Alias] The path from which to extract the disk name
+ * @return String
+ *)
+on disk_of(pth)
+	set pth to _ensure_path_is_string(pth)
+	set separator to _separator_of(pth)
+
+	set parts to _split(pth, separator)
+	set partcount to (count parts)
+	repeat with i from 1 to partcount
+		if item i of parts is "Volumes" and i < partcount then
+			return item (i + 1) of parts
+		end if
+	end repeat
+	return item 1 of parts
+end disk_of
 
 
 on _separator_of(pth)
