@@ -21,9 +21,8 @@ property ASCII_LETTERS : ASCII_LOWERCASE & ASCII_UPPERCASE
 (** Punctuation and special characters *)
 property SPECIAL_CHARS : "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-property WHITESPACE : "
-"
 (** Whitespace characters tab, space, return, and linefeed *)
+property WHITESPACE : space & tab & return & linefeed
 
 
 (**
