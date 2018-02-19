@@ -3,28 +3,27 @@
  *
  * Darrick Herwehe http://www.exitcodeone.com
  *)
-
 property version : "1.0"
 
 
-(**Ascii lowercase letters a-z*)
+(** Ascii lowercase letters a-z *)
 property ASCII_LOWERCASE : "abcdefghijklmnopqrstuvwxyz"
 
-(**Ascii uppercase letters A-Z*)
+(** Ascii uppercase letters A-Z *)
 property ASCII_UPPERCASE : "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-(**Numbers 0-9*)
+(** Numbers 0-9 *)
 property DIGITS : "0123456789"
 
-(**Combination of ASCII_LOWERCASE and ASCII_UPPERCASE*)
+(** Combination of ASCII_LOWERCASE and ASCII_UPPERCASE *)
 property ASCII_LETTERS : ASCII_LOWERCASE & ASCII_UPPERCASE
 
-(**Punctuation and special characters*)
+(** Punctuation and special characters *)
 property SPECIAL_CHARS : "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-(**Whitespace characters tab, space, return, and linefeed*)
 property WHITESPACE : "
 "
+(** Whitespace characters tab, space, return, and linefeed *)
 
 
 (**

@@ -3,7 +3,6 @@
  *
  * Darrick Herwehe http://www.exitcodeone.com
  *)
-
 property version : "1.0"
 
 
@@ -96,7 +95,6 @@ on path_parts(pth)
 end path_parts
 
 
-
 on parent_dir(pth)
 	set pth to _ensure_path_is_string(pth)
 	set separator to _separator_of(pth)
@@ -153,6 +151,7 @@ on _separator_of(pth)
 	return ":"
 end _separator_of
 
+
 on _ensure_path_is_string(pth)
 	if class of pth is alias then
 		return pth as string
@@ -170,37 +169,10 @@ on _split(str, delimiter)
 	return theList
 end _split
 
+
 on _join(theList, delimiter)
 	set AppleScript's text item delimiters to delimiter
 	set theText to theList as text
 	set AppleScript's text item delimiters to ""
 	return theText
 end _join
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

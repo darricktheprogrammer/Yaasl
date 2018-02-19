@@ -3,7 +3,6 @@
  *
  * Darrick Herwehe http://www.exitcodeone.com
  *)
-
 property version : "1.0"
 
 
@@ -34,7 +33,6 @@ on _assert_is_list(ls)
 		error errmsg number errnum
 	end if
 end _assert_is_list
-
 
 
 (**
