@@ -135,6 +135,14 @@ on disk_of(pth)
 end disk_of
 
 
+(*
+ * Private helper functions.
+ *
+ * These routines are available in other libraries, but are copied here to
+ * reduce dependencies. It's not ideal, but these provide basic functionality
+ * in most other languages.
+ *
+ *)
 on _separator_of(pth)
 	set separators to {":", "/"}
 	repeat with i from 1 to (count separators)
@@ -152,14 +160,6 @@ on _ensure_path_is_string(pth)
 end _ensure_path_is_string
 
 
-(*
- * Private helper functions.
- *
- * These routines are available in other libraries, but are copied here to
- * reduce dependencies. It's not ideal, but these provide basic functionality
- * in most other languages.
- *
- *)
 on _split(str, delimiter)
 	if str is "" then
 		return {str}
