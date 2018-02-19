@@ -5,14 +5,7 @@
  *
  * Darrick Herwehe http://www.exitcodeone.com
  *)
-
 property version : "1.0"
-
-
-
-
-
-
 
 
 --Sub-routine to manage windows while get user list input
@@ -36,6 +29,7 @@ on chooseFromList(currList, currDialog, defaultItem)
 	return myChoice
 end chooseFromList
 
+
 --Sub-routine to display a dialog, while managing the program windows
 --------------------------------------------------------------------------------
 on dispDialog(theText, typeSpecifier)
@@ -58,7 +52,6 @@ on dispDialog(theText, typeSpecifier)
 	tell application FrontAppName to activate
 	return userInput
 end dispDialog
-
 
 
 --Sub-routine to let user choose a path; default path is the front Finder window
