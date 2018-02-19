@@ -10,6 +10,13 @@
  * so it can be passed into `map()` like in the following example:
  * `map(funclib's tostring, theList)` will convert {1, 2, 3} to {"1", "2", "3"}.
  *
+ * !!! warning: Any function passed to `map` or `filter` that is not
+ * self contained (i.e., calls another function) will error out. Once the
+ * function is passed to `functools`, it is then a property of the `functools`
+ * library, meaning it no longer has access to any of the functions in it's own
+ * library. Until a fix can be determined, only attempt to `map` or `filter`
+ * using self contained functions.
+ *
  * Darrick Herwehe http://www.exitcodeone.com
  *)
 
