@@ -17,7 +17,10 @@ script BaseSystemTest
 
 	on setUp()
 		tell application "System Events" to set startup_disk to name of startup disk
-		set systemlib to load script (POSIX file ((POSIX path of (path to me as string) & "/../../") & "system.scpt"))
+		tell application "System Events"
+			set top_level to POSIX path of (container of container of (path to me)) & "/"
+		end tell
+		set systemlib to load script (top_level & "system.scpt")
 	end setUp
 end script
 

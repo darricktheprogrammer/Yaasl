@@ -20,8 +20,11 @@ script BaseListTest
 		set shortlist to {"a", "b", "c"}
 		set recordlist to {{a:1, b:2}, {c:3, d:4}}
 		set longlist to {"a", "b", "c", "d", "e", "f", "g"}
-		
-		set listlib to load script (POSIX file ((POSIX path of (path to me as string) & "/../../") & "list.scpt"))
+
+		tell application "System Events"
+			set top_level to POSIX path of (container of container of (path to me)) & "/"
+		end tell
+		set listlib to load script (top_level & "list.scpt")
 	end setUp
 end script
 
