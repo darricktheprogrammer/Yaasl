@@ -316,7 +316,7 @@ on format(str, args)
 
 	-- Make sure the amount of args matches the amount of braces
 	set {braceCount, argcount} to {(count parts) - 1, count args}
-	if braceCount does not equal argcount then
+	if braceCount is not equal to argcount then
 		set errmsg to format("Expected {} arguments, but received {}.", {braceCount, argcount})
 		error errmsg number 702
 	end if
