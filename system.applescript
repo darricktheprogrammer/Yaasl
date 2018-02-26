@@ -156,6 +156,7 @@ on _ensure_path_is_string(pth)
 	if class of pth is alias then
 		return pth as string
 	end if
+	return pth
 end _ensure_path_is_string
 
 
