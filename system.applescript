@@ -176,3 +176,4 @@ on _join(theList, delimiter)
 	set AppleScript's text item delimiters to ""
 	return theText
 end _join
+

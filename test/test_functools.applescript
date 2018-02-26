@@ -86,11 +86,3 @@ script FilterTest
 		assertEqual(val, {})
 	end script
 end script
-
-
-
-
-
-
-
-

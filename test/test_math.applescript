@@ -317,4 +317,3 @@ script SingleNumberFunctions
 		assertEqual(704, errnum)
 	end script
 end script
-
