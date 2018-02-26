@@ -154,9 +154,3 @@ script PathData
 		assertEqual("diskname", disk_name)
 	end script
 end script
-
-
-
-
-
-
