@@ -14,8 +14,8 @@ property version : "1.0"
  * over the place.
  *
  * @throws TypeError (704)
- * @param Any The value to check
- * @return Void
+ * @param n (Any): The value to check
+ * @return (Void)
  *)
 on _assert_is_number(n)
 	if class of n is not in {real, integer} then
@@ -45,8 +45,8 @@ end _assert_is_list
  *          --> 6
  *
  * @throws TypeError (704)
- * @param List The list of numbers
- * @return Number
+ * @param ls (List): The list of numbers
+ * @return (Number)
  *)
 on sum(ls)
 	_assert_is_list(ls)
@@ -71,8 +71,8 @@ end sum
  *          --> 3.0
  *
  * @throws TypeError (704)
- * @param List A list of numbers (can be reals or integers)
- * @return Real
+ * @param ls (List): A list of numbers (can be reals or integers)
+ * @return (Real)
  *)
 on avg(ls)
 	_assert_is_list(ls)
@@ -87,8 +87,8 @@ end avg
  * Calculate the absolute value of a number
  *
  * @throws TypeError (704)
- * @param Number
- * @return Number
+ * @param n (Number):
+ * @return (Number)
  *)
 on abs(n)
 	_assert_is_number(n)
@@ -107,8 +107,8 @@ end abs
  * numbers cannot be compared to text. `max()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param List
- * @return Any
+ * @param ls (List):
+ * @return (Any)
  *)
 on max(ls)
 	_assert_is_list(ls)
@@ -130,8 +130,8 @@ end max
  * numbers cannot be compared to text. `min()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param List
- * @return Any
+ * @param ls (List):
+ * @return (Any)
  *)
 on min(ls)
 	_assert_is_list(ls)
@@ -148,8 +148,8 @@ end min
 (*!
  * Determine the next integer up from the given number
  *
- * @param Number
- * @return Integer
+ * @param n (Number):
+ * @return (Integer)
  *)
 on ceil(n)
 	_assert_is_number(n)
@@ -160,8 +160,8 @@ end ceil
 (*!
  * Determine the next integer down from the given number
  *
- * @param Number
- * @return Integer
+ * @param n (Number):
+ * @return (Integer)
  *)
 on floor(n)
 	_assert_is_number(n)
@@ -172,8 +172,8 @@ end floor
 (*!
  * Calculate the square root of a number
  *
- * @param Number
- * @return Real
+ * @param n (Number):
+ * @return (Real)
  *)
 on sqrt(n)
 	_assert_is_number(n)
@@ -185,8 +185,8 @@ end sqrt
 (*!
  * Determine if a number is even
  *
- * @param Number
- * @return Boolean
+ * @param n (Number):
+ * @return (Boolean)
  *)
 on is_even(n)
 	_assert_is_number(n)
@@ -197,8 +197,8 @@ end is_even
 (*!
  * Determine if a number is odd
  *
- * @param Number
- * @return Boolean
+ * @param n (Number):
+ * @return (Boolean)
  *)
 on is_odd(n)
 	_assert_is_number(n)

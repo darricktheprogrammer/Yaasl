@@ -18,8 +18,8 @@ property version : "1.0"
  *          --> {"a", "b", c}
  *
  * @throws TypeError (704)
- * @param List The list containing duplicates to delete
- * @return List
+ * @param ls (List): The list containing duplicates to delete
+ * @return (List)
  *)
 on unique(ls)
 	set uniquels to {}
@@ -48,10 +48,10 @@ end unique
  * @example insert("d", 4, {"a", "b", "c"})
  *          --> {"a", "b", "c", "d"}
  *
- * @param Anything The item to insert into the list
- * @param Integer The index where the item should be inserted into the list
- * @param List The list in which to insert the item
- * @return List
+ * @param theItem (Anything): The item to insert into the list
+ * @param ix (Integer): The index where the item should be inserted into the list
+ * @param ls (List): The list in which to insert the item
+ * @return (List)
  *)
 on insert(theItem, ix, ls)
 	set errmsg to missing value
@@ -119,9 +119,9 @@ end insert
  *          set {_, ls} to listlib's pop_index(2, {"a", "b", "c"})
  *
  * @throws IndexError (705)
- * @param Integer The index to pop from the list
- * @param List The list from which to pop the last value
- * @return List
+ * @param ix (Integer): The index to pop from the list
+ * @param ls (List): The list from which to pop the last value
+ * @return (List)
  *)
 on pop_index(ix, ls)
 	if ix > (count ls) or ix = 0 then
@@ -173,8 +173,8 @@ end pop_index
  *          --> {"c", {"a", "b"}}
  *
  * @throws IndexError (705)
- * @param List The list from which to pop the last value
- * @return List
+ * @param ls (List): The list from which to pop the last value
+ * @return (List)
  *)
 on pop(ls)
 	return pop_index(count ls, ls)
@@ -190,9 +190,9 @@ end pop
  *
  * Returns 0 if the item is not found.
  *
- * @param [String, Number] The item to find in the list
- * @param List The list in which to find the item
- * @return Integer
+ * @param theItem (String, Number): The item to find in the list
+ * @param ls (List): The list in which to find the item
+ * @return (Integer)
  *)
 on index_of(theItem, ls)
 	if class of theItem is in {record, list} then
@@ -238,9 +238,9 @@ end index_of
  *
  * If the item is not present in the list, the list will remain unchanged.
  *
- * @param [String, Number] The item to remove
- * @param List The list from which to remove the item.
- * @return List
+ * @param theItem (String, Number) The item to remove
+ * @param ls (List): The list from which to remove the item.
+ * @return (List)
  *)
 on remove(theItem, ls)
 	set ix to index_of(theItem, ls)
@@ -262,10 +262,10 @@ end remove
  *          --> {"c", "d"}
  *
  * @throws TypeError (704)
- * @param List The first list to compare.
- *        This is where the result set will come from.
- * @param List The list that is being compared to
- * @return List
+ * @param l1 (List): The first list to compare. This is where the result set
+ *                   will come from.
+ * @param l2 (List): The list that is being compared to
+ * @return (List)
  *)
 on diff(l1, l2)
 	repeat with i from 1 to (count l2)
@@ -300,10 +300,10 @@ end diff
  * @example diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
  *          --> {"a", "b"}
  *
- * @param List The first list to compare.
- *        This is where the result set will come from.
- * @param List The list that is being compared to
- * @return List
+ * @param l1 (List): The first list to compare. This is where the result set
+ *                   will come from.
+ * @param l2 (List): The list that is being compared to
+ * @return (List)
  *)
 on intersect(l1, l2)
 	repeat with i from 1 to (count l2)
@@ -342,9 +342,9 @@ end intersect
  * @example move_item({"a", "b", "c"}, 1, 4)
  *          --> IndexError: Cannot insert item at index 4 when list has 2 items. (705)
  *
- * @param List The list containing the element
- * @param Integer The index of the item to move
- * @param Integer The index to where the item should be moved
+ * @param ls (List): The list containing the element
+ * @param oldindex (Integer): The index of the item to move
+ * @param newindex (Integer): The index to where the item should be moved
  *)
 on move_item(ls, oldindex, newindex)
 	if oldindex < 0 or newindex < 0 then
@@ -372,8 +372,8 @@ end move_item
  * This is the quicksort routine taken from Kevin Bradley's Nite Flite library.
  * http://mac.brothersoft.com/nite-flite-script-library.html
  *
- * @param List The list to sort
- * @return List
+ * @param theList (List): The list to sort
+ * @return (List)
  *)
 on sort(theList)
 	--public routine, called from your script
@@ -425,8 +425,8 @@ end sort
 (*!
  * Count the amount of times an item appears in a list.
  *
- * @param Any The item to find
- * @param type Description
+ * @param value (Any): The item to find
+ * @param ls (List): The list to search for the value.
  *)
 on count_instances(value, ls)
 	set counter to 0
@@ -466,8 +466,8 @@ end count_instances
  * 		zip_many({l1, l2, l3})
  * 		--> {{"a", "d", 1}}
  *
- * @param List A list of lists
- * @return List
+ * @param ls (List): A list of lists
+ * @return (List)
  *)
 on zip_many(ls)
 	if (count ls) = 0 then
@@ -500,9 +500,9 @@ end zip_many
  *
  * Works the same way as `zip_many()` except for only two lists.
  *
- * @param List
- * @param List
- * @return List
+ * @param ls1 (List):
+ * @param ls2 (List):
+ * @return (List)
  *)
 on zip(ls1, ls2)
 	return zip_many({ls1, ls2})

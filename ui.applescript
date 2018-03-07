@@ -27,11 +27,13 @@ property version : "1.0"
  *          --> 1
  *
  *
- * @param List The list for the user to choose from
- * @param String The text prompt, describing to the user what they are choosing
- * @param String The list item to highlight by default. If that option is not in
- *               the list, no default will be highlighted
- * @return List
+ * @param choice_list (List): The list for the user to choose from
+ * @param choice_prompt (String): The text prompt, describing to the user what
+ *                                they are choosing
+ * @param default_item (String): The list item to highlight by default. If that
+ *                               option is not in the list, no default will
+ *                               be highlighted
+ * @return (List)
  *)
 on choose_from_list(choice_list, choice_prompt, default_item)
 	set frontAppPath to path to frontmost application
@@ -58,20 +60,17 @@ end choose_from_list
  * when displayed. `display_dialog` also handles some basic button handling if
  * text input is not needed.
  *
- * @param String The text to be presented to the user.
- * @param [List, String] Either a list of button names, or default text to create
- *                       text input box. In this implementation, the two are
- *                       mutually exclusive. If you need text input,
- *                       and multiple button options, this function will not
- *                       work for you.
+ * @param dialog_text (String): The text to be presented to the user.
+ * @param user_input_method (List, String) Either a list of button names, or
+ *     default text to create text input box. In this implementation, the two
+ *     are mutually exclusive. If you need text input, and multiple button
+ *     options, this function will not work for you.
  *
- * 						 When given a list of buttons, the buttons are added to
- * 						 the dialog from left right with the rightmost button
- * 						 being the default. For example, `{"Cancel", "Okay"}`
- * 						 would add a `Cancel` button on the left, an `Okay`
- * 						 button on the right, and set `Okay` as
- * 						 the default button choice.
- * @return String
+ *     When given a list of buttons, the buttons are added to the dialog from
+ *     left right with the rightmost button being the default. For example,
+ *     `{"Cancel", "Okay"}` would add a `Cancel` button on the left, an
+ *     `Okay` button on the right, and set `Okay` as the default button choice.
+ * @return (String)
  *)
 on display_dialog(dialog_text, user_input_method)
 	set frontAppPath to path to frontmost application
@@ -104,7 +103,7 @@ end display_dialog
  *
  * Multiple selections are allowed.
  *
- * @return List
+ * @return (List)
  *)
 on choose_folder()
 	tell application "Finder"
@@ -127,7 +126,7 @@ end choose_folder
  *
  * Multiple selections are not allowed.
  *
- * @return Alias
+ * @return (Alias)
  *)
 on choose_file()
 	tell application "Finder"

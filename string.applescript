@@ -29,9 +29,9 @@ property WHITESPACE : space & tab & return & linefeed
 (*!
  * Split a string into a list on the delimiter.
  *
- * @param String The string to split.
- * @param String The delimiter on which to split the string.
- * @return List
+ * @param str (String): The string to split.
+ * @param delimiter (String): The delimiter on which to split the string.
+ * @return (List)
  *)
 on split(str, delimiter)
 	if str is "" then
@@ -47,9 +47,9 @@ end split
 (*!
  * Convert a list to string, inserting a delimiter between each list item.
  *
- * @param List The list to convert.
- * @param String The text to insert between list items.
- * @return String
+ * @param theList (List): The list to convert.
+ * @param delimiter (String): The text to insert between list items.
+ * @return (String)
  *)
 on join(theList, delimiter)
 	set AppleScript's text item delimiters to delimiter
@@ -62,10 +62,10 @@ end join
 (*!
  * Search for text and replace it.
  *
- * @param String The original string.
- * @param String The text to replace.
- * @param String The replacement text.
- * @return String
+ * @param str (String): The original string.
+ * @param oldText (String): The text to replace.
+ * @param newText (String): The replacement text.
+ * @return (String)
  *)
 on search_and_replace(str, oldText, newText)
 	set AppleScript's text item delimiters to oldText
@@ -80,8 +80,8 @@ end search_and_replace
 (*!
  * Convert a string to all lowercase, maintaining special characters.
  *
- * @param String The string in which to convert the case.
- * @return String
+ * @param str (String): The string in which to convert the case.
+ * @return (String)
  *)
 on to_lower(str)
 	repeat with i from 1 to (count ASCII_UPPERCASE)
@@ -94,8 +94,8 @@ end to_lower
 (*!
  * Convert a string to all uppercase, maintaining special characters.
  *
- * @param String The string in which to convert the case.
- * @return String
+ * @param str (String): The string in which to convert the case.
+ * @return (String)
  *)
 on to_upper(str)
 	repeat with i from 1 to (count ASCII_LOWERCASE)
@@ -114,7 +114,7 @@ end to_upper
  * The following words will always be converted to lowercase and not capitalized:
  * a, an, in, the, and, but, for, or, nor, to.
  *
- * @param String The text to convert.
+ * @param str (String): The text to convert.
  *)
 on title_case(str)
 	set stopwords to {"a", "an", "in", "the", "and", "but", "for", "or", "nor", "to"}
@@ -143,8 +143,8 @@ end title_case
  * The end of a sentences is considered to be one of ".!?"
  * followed by one or two spaces.
  *
- * @param String The string to convert.
- * @return String
+ * @param str (String): The string to convert.
+ * @return (String)
  *)
 on sentence_case(str)
 	if str is "" then
@@ -168,8 +168,8 @@ end sentence_case
 (*!
  * Alternative method of converting case without directly calling the other routines.
  *
- * @param String The text to convert.
- * @param String The desired case ("uppercase", "lowercase", "titlecase", or "sentencecase")
+ * @param str (String): The text to convert.
+ * @param tCase (String): The desired case ("uppercase", "lowercase", "titlecase", or "sentencecase")
  *)
 on convert_case(str, tCase)
 	if tCase is "uppercase" then
@@ -189,8 +189,8 @@ end convert_case
 (*!
  * Remove whitespace from beginning and end of string.
  *
- * @param String The string to trim.
- * @return String
+ * @param str (String): The string to trim.
+ * @return (String)
  *)
 on trim(str)
 	if str is "" then
@@ -218,9 +218,9 @@ end trim
 (*!
  * Pad a string with spaces on the left until it reaches the desired width.
  *
- * @param String The string to pad.
- * @param Integer The desired width of the string.
- * @return String
+ * @param str (String): The string to pad.
+ * @param padwidth (Integer): The desired width of the string.
+ * @return (String)
  *)
 on pad_left(str, padwidth)
 	return pad_left_with_char(" ", str, padwidth)
@@ -230,9 +230,9 @@ end pad_left
 (*!
  * Pad a string with spaces on the right until it reaches the desired width.
  *
- * @param String The string to pad.
- * @param Integer The desired width of the string.
- * @return String
+ * @param str (String): The string to pad.
+ * @param padwidth (Integer): The desired width of the string.
+ * @return (String)
  *)
 on pad_right(str, padwidth)
 	return pad_right_with_char(" ", str, padwidth)
@@ -242,10 +242,10 @@ end pad_right
 (*!
  * Pad a string with the given on the left until it reaches the desired width.
  *
- * @param Char A single character to be used for padding.
- * @param String The string to pad.
- * @param Integer The desired width of the string.
- * @return String
+ * @param char (Char): A single character to be used for padding.
+ * @param str (String): The string to pad.
+ * @param padwidth (Integer): The desired width of the string.
+ * @return (String)
  *)
 on pad_left_with_char(char, str, padwidth)
 	if (count char) > 1 then
@@ -263,10 +263,10 @@ end pad_left_with_char
 (*!
  * Pad a string with the given on the right until it reaches the desired width.
  *
- * @param Char A single character to be used for padding.
- * @param String The string to pad.
- * @param Integer The desired width of the string.
- * @return String
+ * @param char (Char): A single character to be used for padding.
+ * @param str (String): The string to pad.
+ * @param padwidth (Integer): The desired width of the string.
+ * @return (String)
  *)
 on pad_right_with_char(char, str, padwidth)
 	if (count char) > 1 then
@@ -304,9 +304,10 @@ end pad_right_with_char
  * format("These are {}: {*}.", {"curly braces"}) --> These are curly braces: {}.
  * ```
  *
- * @param String The original string formatting template.
- * @param [String, List] One or more strings used to replace `{}` in the string template.
- * @return String
+ * @param str (String): The original string formatting template.
+ * @param args (String, List) One or more strings used to replace `{}`
+ *                      	  in the string template.
+ * @return (String)
  *)
 on format(str, args)
 	if class of args is not list then
