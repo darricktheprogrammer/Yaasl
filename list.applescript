@@ -48,7 +48,7 @@ end unique
  * @example insert("d", 4, {"a", "b", "c"})
  *          --> {"a", "b", "c", "d"}
  *
- * @param theItem (Anything): The item to insert into the list
+ * @param theItem (Any): The item to insert into the list
  * @param ix (Integer): The index where the item should be inserted into the list
  * @param ls (List): The list in which to insert the item
  * @return (List)
