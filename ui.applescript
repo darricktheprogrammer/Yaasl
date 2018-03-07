@@ -140,4 +140,3 @@ on choose_file()
 	set fileChoice to choose file with prompt "Where is the file?" default location theSelection
 	return fileChoice
 end choose_file
-
