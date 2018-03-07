@@ -1,23 +1,24 @@
 (*!
- * Library to add additional functional programming support to Applescript.
- * Contains helper functions that are able to be passed into `map()` and
- * `filter()`. These are duplicates of Applescript built-in functionality, but
- * because the built-in functionality are not first-class functions, they are
- * unable to be passed into functional programming tools.
+ * @header
+ * 		Library to add additional functional programming support to Applescript.
+ * 		Contains helper functions that are able to be passed into `map()` and
+ * 		`filter()`. These are duplicates of Applescript built-in functionality, but
+ * 		because the built-in functionality are not first-class functions, they are
+ * 		unable to be passed into functional programming tools.
  *
- * For example, there are helper functions for coercion such as `tostring(x)`.
- * Even though this is built into the language, the helper function is there
- * so it can be passed into `map()` like in the following example:
- * `map(funclib's tostring, theList)` will convert {1, 2, 3} to {"1", "2", "3"}.
+ * 		For example, there are helper functions for coercion such as `tostring(x)`.
+ * 		Even though this is built into the language, the helper function is there
+ * 		so it can be passed into `map()` like in the following example:
+ * 		`map(funclib's tostring, theList)` will convert {1, 2, 3} to {"1", "2", "3"}.
  *
- * !!! warning: Any function passed to `map` or `filter` that is not
- * self contained (i.e., calls another function) will error out. Once the
- * function is passed to `functools`, it is then a property of the `functools`
- * library, meaning it no longer has access to any of the functions in it's own
- * library. Until a fix can be determined, only attempt to `map` or `filter`
- * using self contained functions.
+ * 		!!! warning: Any function passed to `map` or `filter` that is not
+ * 		self contained (i.e., calls another function) will error out. Once the
+ * 		function is passed to `functools`, it is then a property of the `functools`
+ * 		library, meaning it no longer has access to any of the functions in it's own
+ * 		library. Until a fix can be determined, only attempt to `map` or `filter`
+ * 		using self contained functions.
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 

@@ -1,10 +1,11 @@
 (*!
- * Library for interacting with the user.
+ * @header
+ * 		Library for interacting with the user.
  *
- * Mostly contains shortcuts that help exclude error handling inline, or focus
- * the dialog window, which does not always happen by default.
+ * 		Mostly contains shortcuts that help exclude error handling inline, or
+ * 		focus the dialog window, which does not always happen by default.
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 
