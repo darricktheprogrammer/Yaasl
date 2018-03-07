@@ -339,6 +339,7 @@ end intersect
  *
  * @example move_item({"a", "b", "c"}, 1, 3)
  *          --> {"b", "c", "a"}
+ *
  * @example move_item({"a", "b", "c"}, 1, 4)
  *          --> IndexError: Cannot insert item at index 4 when list has 2 items. (705)
  *
@@ -453,12 +454,14 @@ end count_instances
  * @example
  * 		zip_many({})
  * 		--> {}
+ *
  * @example
  * 		set l1 to {"a", "b", "c"}
  * 		set l2 to {"d", "e", "f"}
  * 		set l3 to {1, 2, 3}
  * 		zip_many({l1, l2, l3})
  * 		--> {{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}
+ *
  * @example
  * 		set l1 to {"a", "b", "c"}
  * 		set l2 to {"d", "e", "f"}
