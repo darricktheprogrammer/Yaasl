@@ -1,7 +1,8 @@
 (*!
- * Library for working with folders and files.
+ * @header
+ * 		Library for working with folders and files.
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 
