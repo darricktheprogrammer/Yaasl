@@ -1,19 +1,20 @@
-(**
- * Library for working with folders and files.
+(*!
+ * @header
+ * 		Library for working with folders and files.
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 
 
-(**
+(*!
  * Determine if a file or folder exists
  *
- * @param [String, Alias, Disk Item] Representation of a file or folder.
- *                        			 This can be a string representing a
- *                        			 POSIX or HFS+ path, a file alias, or
- *                        			 System Events Disk Item.
- * @return Boolean
+ * @param pth (String, Alias, Disk Item) Representation of a file or folder.
+ *                        			 	 This can be a string representing a
+ *                        			 	 POSIX or HFS+ path, a file alias, or
+ *                        			 	 System Events Disk Item.
+ * @return (Boolean)
  *)
 on exists_path(pth)
 	if class of pth is not string then
@@ -26,26 +27,26 @@ on exists_path(pth)
 end exists_path
 
 
-(**
+(*!
  * Determine if computer is connected to a network server share
  *
- * @param String The name of the server
- * @return Boolean
+ * @param servername (String): The name of the server
+ * @return (Boolean)
  *)
 on server_connected(servername)
 	return exists_path(servername)
 end server_connected
 
 
-(**
+(*!
  * Return the parent folder, name, and extension of a path.
  *
  * If given a file path, the name returned will be the name of the folder, and
  * the extension will be an empty String
  *
- * @param [String, Alias] The file path. Accepts an HFS+ or POSIX file path
- *                        or a file Alias.
- * @return List
+ * @param pth (String, Alias) The file path. Accepts an HFS+ or POSIX file path
+ *                     		  or a file Alias.
+ * @return (List)
  *)
 on path_parts(pth)
 	if class of pth is alias then
@@ -95,6 +96,12 @@ on path_parts(pth)
 end path_parts
 
 
+(*!
+ * Get the parent directory of the given path
+ *
+ * @param pth (String, Alias, Disk Item) The original path
+ * @return (String)
+ *)
 on parent_dir(pth)
 	set pth to _ensure_path_is_string(pth)
 	set separator to _separator_of(pth)
@@ -112,11 +119,11 @@ on parent_dir(pth)
 end parent_dir
 
 
-(**
+(*!
  * Extract the volume/disk name from a path.
  *
- * @param [String, Alias] The path from which to extract the disk name
- * @return String
+ * @param pth (String, Alias) The path from which to extract the disk name
+ * @return (String)
  *)
 on disk_of(pth)
 	set pth to _ensure_path_is_string(pth)

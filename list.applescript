@@ -1,12 +1,13 @@
-(**
- * Library for working with and manipulating lists
+(*!
+ * @header
+ * 		Library for working with and manipulating lists
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 
 
-(**
+(*!
  * Remove duplicate items from a list.
  *
  * Because of Applescript comparison limitations, records and lists are not
@@ -17,8 +18,8 @@ property version : "1.0"
  *          --> {"a", "b", c}
  *
  * @throws TypeError (704)
- * @param List The list containing duplicates to delete
- * @return List
+ * @param ls (List): The list containing duplicates to delete
+ * @return (List)
  *)
 on unique(ls)
 	set uniquels to {}
@@ -37,7 +38,7 @@ on unique(ls)
 end unique
 
 
-(**
+(*!
  * Insert an item into a given position in a list.
  *
  * The item will be placed in the position before the given index,
@@ -47,10 +48,10 @@ end unique
  * @example insert("d", 4, {"a", "b", "c"})
  *          --> {"a", "b", "c", "d"}
  *
- * @param Anything The item to insert into the list
- * @param Integer The index where the item should be inserted into the list
- * @param List The list in which to insert the item
- * @return List
+ * @param theItem (Any): The item to insert into the list
+ * @param ix (Integer): The index where the item should be inserted into the list
+ * @param ls (List): The list in which to insert the item
+ * @return (List)
  *)
 on insert(theItem, ix, ls)
 	set errmsg to missing value
@@ -92,7 +93,7 @@ on insert(theItem, ix, ls)
 end insert
 
 
-(**
+(*!
  * Remove an item from a list at the given index and return it.
  *
  * Because an item cannot be deleted in place from a list, the return value
@@ -118,9 +119,9 @@ end insert
  *          set {_, ls} to listlib's pop_index(2, {"a", "b", "c"})
  *
  * @throws IndexError (705)
- * @param Integer The index to pop from the list
- * @param List The list from which to pop the last value
- * @return List
+ * @param ix (Integer): The index to pop from the list
+ * @param ls (List): The list from which to pop the last value
+ * @return (List)
  *)
 on pop_index(ix, ls)
 	if ix > (count ls) or ix = 0 then
@@ -156,7 +157,7 @@ on pop_index(ix, ls)
 end pop_index
 
 
-(**
+(*!
  * Remove the last item from a list and return it.
  *
  * Acts as a shortcut for `pop_index((count ls), ls)`
@@ -172,15 +173,15 @@ end pop_index
  *          --> {"c", {"a", "b"}}
  *
  * @throws IndexError (705)
- * @param List The list from which to pop the last value
- * @return List
+ * @param ls (List): The list from which to pop the last value
+ * @return (List)
  *)
 on pop(ls)
 	return pop_index(count ls, ls)
 end pop
 
 
-(**
+(*!
  * Get the index of the first occurrence of an item in a list.
  *
  * Applescript provides the `offset` command for strings, but does not provide
@@ -189,9 +190,9 @@ end pop
  *
  * Returns 0 if the item is not found.
  *
- * @param [String, Number] The item to find in the list
- * @param List The list in which to find the item
- * @return Integer
+ * @param theItem (String, Number): The item to find in the list
+ * @param ls (List): The list in which to find the item
+ * @return (Integer)
  *)
 on index_of(theItem, ls)
 	if class of theItem is in {record, list} then
@@ -232,14 +233,14 @@ on index_of(theItem, ls)
 end index_of
 
 
-(**
+(*!
  * Remove the first occurrence of an item from a list.
  *
  * If the item is not present in the list, the list will remain unchanged.
  *
- * @param [String, Number] The item to remove
- * @param List The list from which to remove the item.
- * @return List
+ * @param theItem (String, Number) The item to remove
+ * @param ls (List): The list from which to remove the item.
+ * @return (List)
  *)
 on remove(theItem, ls)
 	set ix to index_of(theItem, ls)
@@ -250,7 +251,7 @@ on remove(theItem, ls)
 end remove
 
 
-(**
+(*!
  * Return the values of the first list that are not present in the second list.
  *
  * Because of Applescript comparison limitations, records and lists are not
@@ -261,10 +262,10 @@ end remove
  *          --> {"c", "d"}
  *
  * @throws TypeError (704)
- * @param List The first list to compare.
- *        This is where the result set will come from.
- * @param List The list that is being compared to
- * @return List
+ * @param l1 (List): The first list to compare. This is where the result set
+ *                   will come from.
+ * @param l2 (List): The list that is being compared to
+ * @return (List)
  *)
 on diff(l1, l2)
 	repeat with i from 1 to (count l2)
@@ -291,7 +292,7 @@ on diff(l1, l2)
 end diff
 
 
-(**
+(*!
  * Return only the values of the first list also contained in the second list.
  *
  * Basically the opposite of `diff()`
@@ -299,10 +300,10 @@ end diff
  * @example diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
  *          --> {"a", "b"}
  *
- * @param List The first list to compare.
- *        This is where the result set will come from.
- * @param List The list that is being compared to
- * @return List
+ * @param l1 (List): The first list to compare. This is where the result set
+ *                   will come from.
+ * @param l2 (List): The list that is being compared to
+ * @return (List)
  *)
 on intersect(l1, l2)
 	repeat with i from 1 to (count l2)
@@ -329,7 +330,7 @@ on intersect(l1, l2)
 end intersect
 
 
-(**
+(*!
  * Move an item from one spot in the list to another.
  *
  * Note that `move_item` removes the item from the list _first_, then readds it
@@ -338,12 +339,14 @@ end intersect
  *
  * @example move_item({"a", "b", "c"}, 1, 3)
  *          --> {"b", "c", "a"}
+ *
  * @example move_item({"a", "b", "c"}, 1, 4)
  *          --> IndexError: Cannot insert item at index 4 when list has 2 items. (705)
  *
- * @param List The list containing the element
- * @param Integer The index of the item to move
- * @param Integer The index to where the item should be moved
+ * @param ls (List): The list containing the element
+ * @param oldindex (Integer): The index of the item to move
+ * @param newindex (Integer): The index to where the item should be moved
+ * @return (List)
  *)
 on move_item(ls, oldindex, newindex)
 	if oldindex < 0 or newindex < 0 then
@@ -365,14 +368,14 @@ on move_item(ls, oldindex, newindex)
 end move_item
 
 
-(**
+(*!
  * Sort a list.
  *
  * This is the quicksort routine taken from Kevin Bradley's Nite Flite library.
  * http://mac.brothersoft.com/nite-flite-script-library.html
  *
- * @param List The list to sort
- * @return List
+ * @param theList (List): The list to sort
+ * @return (List)
  *)
 on sort(theList)
 	--public routine, called from your script
@@ -421,11 +424,12 @@ on sort(theList)
 end sort
 
 
-(**
+(*!
  * Count the amount of times an item appears in a list.
  *
- * @param Any The item to find
- * @param type Description
+ * @param value (Any): The item to find
+ * @param ls (List): The list to search for the value.
+ * @return (Integer)
  *)
 on count_instances(value, ls)
 	set counter to 0
@@ -438,7 +442,7 @@ on count_instances(value, ls)
 end count_instances
 
 
-(**
+(*!
  * Zip lists together, creating a list of n-item lists, where n = (count lists).
  *
  * Iterate through each of the given lists, adding their current values to an
@@ -452,12 +456,14 @@ end count_instances
  * @example
  * 		zip_many({})
  * 		--> {}
+ *
  * @example
  * 		set l1 to {"a", "b", "c"}
  * 		set l2 to {"d", "e", "f"}
  * 		set l3 to {1, 2, 3}
  * 		zip_many({l1, l2, l3})
  * 		--> {{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}
+ *
  * @example
  * 		set l1 to {"a", "b", "c"}
  * 		set l2 to {"d", "e", "f"}
@@ -465,8 +471,8 @@ end count_instances
  * 		zip_many({l1, l2, l3})
  * 		--> {{"a", "d", 1}}
  *
- * @param List A list of lists
- * @return List
+ * @param ls (List): A list of lists
+ * @return (List)
  *)
 on zip_many(ls)
 	if (count ls) = 0 then
@@ -494,14 +500,14 @@ on zip_many(ls)
 end zip_many
 
 
-(**
+(*!
  * Zip two lists together, creating a list of 2-item lists.
  *
  * Works the same way as `zip_many()` except for only two lists.
  *
- * @param List
- * @param List
- * @return List
+ * @param ls1 (List):
+ * @param ls2 (List):
+ * @return (List)
  *)
 on zip(ls1, ls2)
 	return zip_many({ls1, ls2})
