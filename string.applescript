@@ -1,4 +1,4 @@
-(**
+(*!
  * Library for working with and manipulating text
  *
  * Darrick Herwehe http://www.exitcodeone.com
@@ -6,26 +6,26 @@
 property version : "1.0"
 
 
-(** Ascii lowercase letters a-z *)
+(*! Ascii lowercase letters a-z *)
 property ASCII_LOWERCASE : "abcdefghijklmnopqrstuvwxyz"
 
-(** Ascii uppercase letters A-Z *)
+(*! Ascii uppercase letters A-Z *)
 property ASCII_UPPERCASE : "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-(** Numbers 0-9 *)
+(*! Numbers 0-9 *)
 property DIGITS : "0123456789"
 
-(** Combination of ASCII_LOWERCASE and ASCII_UPPERCASE *)
+(*! Combination of ASCII_LOWERCASE and ASCII_UPPERCASE *)
 property ASCII_LETTERS : ASCII_LOWERCASE & ASCII_UPPERCASE
 
-(** Punctuation and special characters *)
+(*! Punctuation and special characters *)
 property SPECIAL_CHARS : "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-(** Whitespace characters tab, space, return, and linefeed *)
+(*! Whitespace characters tab, space, return, and linefeed *)
 property WHITESPACE : space & tab & return & linefeed
 
 
-(**
+(*!
  * Split a string into a list on the delimiter.
  *
  * @param String The string to split.
@@ -43,7 +43,7 @@ on split(str, delimiter)
 end split
 
 
-(**
+(*!
  * Convert a list to string, inserting a delimiter between each list item.
  *
  * @param List The list to convert.
@@ -58,7 +58,7 @@ on join(theList, delimiter)
 end join
 
 
-(**
+(*!
  * Search for text and replace it.
  *
  * @param String The original string.
@@ -76,7 +76,7 @@ on search_and_replace(str, oldText, newText)
 end search_and_replace
 
 
-(**
+(*!
  * Convert a string to all lowercase, maintaining special characters.
  *
  * @param String The string in which to convert the case.
@@ -90,7 +90,7 @@ on to_lower(str)
 end to_lower
 
 
-(**
+(*!
  * Convert a string to all uppercase, maintaining special characters.
  *
  * @param String The string in which to convert the case.
@@ -104,7 +104,7 @@ on to_upper(str)
 end to_upper
 
 
-(**
+(*!
  * Convert text to title case.
  *
  * Does not take punctuation into account. Only words preceded by a space
@@ -136,7 +136,7 @@ on title_case(str)
 end title_case
 
 
-(**
+(*!
  * Convert text to contain capital letters at beginning of each sentence.
  *
  * The end of a sentences is considered to be one of ".!?"
@@ -164,7 +164,7 @@ on sentence_case(str)
 end sentence_case
 
 
-(**
+(*!
  * Alternative method of converting case without directly calling the other routines.
  *
  * @param String The text to convert.
@@ -185,7 +185,7 @@ on convert_case(str, tCase)
 end convert_case
 
 
-(**
+(*!
  * Remove whitespace from beginning and end of string.
  *
  * @param String The string to trim.
@@ -214,7 +214,7 @@ on trim(str)
 end trim
 
 
-(**
+(*!
  * Pad a string with spaces on the left until it reaches the desired width.
  *
  * @param String The string to pad.
@@ -226,7 +226,7 @@ on pad_left(str, padwidth)
 end pad_left
 
 
-(**
+(*!
  * Pad a string with spaces on the right until it reaches the desired width.
  *
  * @param String The string to pad.
@@ -238,7 +238,7 @@ on pad_right(str, padwidth)
 end pad_right
 
 
-(**
+(*!
  * Pad a string with the given on the left until it reaches the desired width.
  *
  * @param Char A single character to be used for padding.
@@ -259,7 +259,7 @@ on pad_left_with_char(char, str, padwidth)
 end pad_left_with_char
 
 
-(**
+(*!
  * Pad a string with the given on the right until it reaches the desired width.
  *
  * @param Char A single character to be used for padding.
@@ -280,7 +280,7 @@ on pad_right_with_char(char, str, padwidth)
 end pad_right_with_char
 
 
-(**
+(*!
  * Simplistic, python-style string formatter.
  *
  * This routine is based on python's `string.format()` method, but is a lot simpler.

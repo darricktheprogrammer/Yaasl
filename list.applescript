@@ -1,4 +1,4 @@
-(**
+(*!
  * Library for working with and manipulating lists
  *
  * Darrick Herwehe http://www.exitcodeone.com
@@ -6,7 +6,7 @@
 property version : "1.0"
 
 
-(**
+(*!
  * Remove duplicate items from a list.
  *
  * Because of Applescript comparison limitations, records and lists are not
@@ -37,7 +37,7 @@ on unique(ls)
 end unique
 
 
-(**
+(*!
  * Insert an item into a given position in a list.
  *
  * The item will be placed in the position before the given index,
@@ -92,7 +92,7 @@ on insert(theItem, ix, ls)
 end insert
 
 
-(**
+(*!
  * Remove an item from a list at the given index and return it.
  *
  * Because an item cannot be deleted in place from a list, the return value
@@ -156,7 +156,7 @@ on pop_index(ix, ls)
 end pop_index
 
 
-(**
+(*!
  * Remove the last item from a list and return it.
  *
  * Acts as a shortcut for `pop_index((count ls), ls)`
@@ -180,7 +180,7 @@ on pop(ls)
 end pop
 
 
-(**
+(*!
  * Get the index of the first occurrence of an item in a list.
  *
  * Applescript provides the `offset` command for strings, but does not provide
@@ -232,7 +232,7 @@ on index_of(theItem, ls)
 end index_of
 
 
-(**
+(*!
  * Remove the first occurrence of an item from a list.
  *
  * If the item is not present in the list, the list will remain unchanged.
@@ -250,7 +250,7 @@ on remove(theItem, ls)
 end remove
 
 
-(**
+(*!
  * Return the values of the first list that are not present in the second list.
  *
  * Because of Applescript comparison limitations, records and lists are not
@@ -291,7 +291,7 @@ on diff(l1, l2)
 end diff
 
 
-(**
+(*!
  * Return only the values of the first list also contained in the second list.
  *
  * Basically the opposite of `diff()`
@@ -329,7 +329,7 @@ on intersect(l1, l2)
 end intersect
 
 
-(**
+(*!
  * Move an item from one spot in the list to another.
  *
  * Note that `move_item` removes the item from the list _first_, then readds it
@@ -365,7 +365,7 @@ on move_item(ls, oldindex, newindex)
 end move_item
 
 
-(**
+(*!
  * Sort a list.
  *
  * This is the quicksort routine taken from Kevin Bradley's Nite Flite library.
@@ -421,7 +421,7 @@ on sort(theList)
 end sort
 
 
-(**
+(*!
  * Count the amount of times an item appears in a list.
  *
  * @param Any The item to find
@@ -438,7 +438,7 @@ on count_instances(value, ls)
 end count_instances
 
 
-(**
+(*!
  * Zip lists together, creating a list of n-item lists, where n = (count lists).
  *
  * Iterate through each of the given lists, adding their current values to an
@@ -494,7 +494,7 @@ on zip_many(ls)
 end zip_many
 
 
-(**
+(*!
  * Zip two lists together, creating a list of 2-item lists.
  *
  * Works the same way as `zip_many()` except for only two lists.
