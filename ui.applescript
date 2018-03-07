@@ -1,4 +1,4 @@
-(**
+(*!
  * Library for interacting with the user.
  *
  * Mostly contains shortcuts that help exclude error handling inline, or focus
@@ -9,7 +9,7 @@
 property version : "1.0"
 
 
-(**
+(*!
  * Choose from list convenience function.
  *
  * Displays a `choose from list` dialog, ensuring that the dialog has focus
@@ -50,7 +50,7 @@ on choose_from_list(choice_list, choice_prompt, default_item)
 end choose_from_list
 
 
-(**
+(*!
  * Display dialog convenience function.
  *
  * Displays a `display dialog` dialog, ensuring that the dialog has focus
@@ -92,7 +92,7 @@ on display_dialog(dialog_text, user_input_method)
 end display_dialog
 
 
-(**
+(*!
  * Choose folder convenience function
  *
  * The main difference between this and vanilla `choose_folder` is that by
@@ -119,7 +119,7 @@ on choose_folder()
 end choose_folder
 
 
-(**
+(*!
  * Choose file convenience function
  *
  * Same as `choose_folder` but for files.

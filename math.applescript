@@ -1,4 +1,4 @@
-(**
+(*!
  * Library for basic math functions
  *
  * Darrick Herwehe http://www.exitcodeone.com
@@ -6,7 +6,7 @@
 property version : "1.0"
 
 
-(**
+(*!
  * Type checking. Determine if a value is of the desired type. If not throw an error.
  *
  * This is for internal library use, so that the error checking is not all
@@ -35,7 +35,7 @@ on _assert_is_list(ls)
 end _assert_is_list
 
 
-(**
+(*!
  * Sum a list of numbers.
  *
  * Returns 0 if the list is empty.
@@ -63,7 +63,7 @@ on sum(ls)
 end sum
 
 
-(**
+(*!
  * Compute the average given a list of numbers
  *
  * @example avg({1, 2, 3, 4, 5})
@@ -82,7 +82,7 @@ on avg(ls)
 end avg
 
 
-(**
+(*!
  * Calculate the absolute value of a number
  *
  * @throws TypeError (704)
@@ -98,7 +98,7 @@ on abs(n)
 end abs
 
 
-(**
+(*!
  * Calculate the largest item in a list
  *
  * Can be used for any type that can be compared, not just numbers. For example,
@@ -121,7 +121,7 @@ on max(ls)
 end max
 
 
-(**
+(*!
  * Calculate the smallest item in a list
  *
  * Can be used for any type that can be compared, not just numbers. For example,
@@ -144,7 +144,7 @@ on min(ls)
 end min
 
 
-(**
+(*!
  * Determine the next integer up from the given number
  *
  * @param Number
@@ -156,7 +156,7 @@ on ceil(n)
 end ceil
 
 
-(**
+(*!
  * Determine the next integer down from the given number
  *
  * @param Number
@@ -168,7 +168,7 @@ on floor(n)
 end floor
 
 
-(**
+(*!
  * Calculate the square root of a number
  *
  * @param Number
@@ -181,7 +181,7 @@ on sqrt(n)
 end sqrt
 
 
-(**
+(*!
  * Determine if a number is even
  *
  * @param Number
@@ -193,7 +193,7 @@ on is_even(n)
 end is_even
 
 
-(**
+(*!
  * Determine if a number is odd
  *
  * @param Number

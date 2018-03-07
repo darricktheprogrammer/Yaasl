@@ -1,4 +1,4 @@
-(**
+(*!
  * Library for working with folders and files.
  *
  * Darrick Herwehe http://www.exitcodeone.com
@@ -6,7 +6,7 @@
 property version : "1.0"
 
 
-(**
+(*!
  * Determine if a file or folder exists
  *
  * @param [String, Alias, Disk Item] Representation of a file or folder.
@@ -26,7 +26,7 @@ on exists_path(pth)
 end exists_path
 
 
-(**
+(*!
  * Determine if computer is connected to a network server share
  *
  * @param String The name of the server
@@ -37,7 +37,7 @@ on server_connected(servername)
 end server_connected
 
 
-(**
+(*!
  * Return the parent folder, name, and extension of a path.
  *
  * If given a file path, the name returned will be the name of the folder, and
@@ -112,7 +112,7 @@ on parent_dir(pth)
 end parent_dir
 
 
-(**
+(*!
  * Extract the volume/disk name from a path.
  *
  * @param [String, Alias] The path from which to extract the disk name
