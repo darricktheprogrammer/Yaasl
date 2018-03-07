@@ -147,6 +147,7 @@ end script
  *
  * @example map(tostring, {1, 2, 3})
  *          	--> {"1", "2", "3"}
+ *
  * @example map(len, {"hello", "world", "I'm", "here"})
  *          	--> {5, 5, 3, 4}
  *
