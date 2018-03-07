@@ -115,6 +115,7 @@ end to_upper
  * a, an, in, the, and, but, for, or, nor, to.
  *
  * @param str (String): The text to convert.
+ * @return (String)
  *)
 on title_case(str)
 	set stopwords to {"a", "an", "in", "the", "and", "but", "for", "or", "nor", "to"}
@@ -170,6 +171,7 @@ end sentence_case
  *
  * @param str (String): The text to convert.
  * @param tCase (String): The desired case ("uppercase", "lowercase", "titlecase", or "sentencecase")
+ * @return (String)
  *)
 on convert_case(str, tCase)
 	if tCase is "uppercase" then

@@ -346,6 +346,7 @@ end intersect
  * @param ls (List): The list containing the element
  * @param oldindex (Integer): The index of the item to move
  * @param newindex (Integer): The index to where the item should be moved
+ * @return (List)
  *)
 on move_item(ls, oldindex, newindex)
 	if oldindex < 0 or newindex < 0 then
@@ -428,6 +429,7 @@ end sort
  *
  * @param value (Any): The item to find
  * @param ls (List): The list to search for the value.
+ * @return (Integer)
  *)
 on count_instances(value, ls)
 	set counter to 0
