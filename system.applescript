@@ -96,6 +96,12 @@ on path_parts(pth)
 end path_parts
 
 
+(*!
+ * Get the parent directory of the given path
+ *
+ * @param pth (String, Alias, Disk Item) The original path
+ * @return (String)
+ *)
 on parent_dir(pth)
 	set pth to _ensure_path_is_string(pth)
 	set separator to _separator_of(pth)
