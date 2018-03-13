@@ -11,7 +11,10 @@ script BaseFuncToolsTest
 
 
 	on setUp()
-		set funclib to load script (POSIX file ((POSIX path of (path to me as string) & "/../../") & "functools.scpt"))
+		tell application "System Events"
+			set top_level to POSIX path of (container of container of (path to me)) & "/"
+		end tell
+		set funclib to load script (top_level & "functools.scpt")
 	end setUp
 end script
 
@@ -83,11 +86,3 @@ script FilterTest
 		assertEqual(val, {})
 	end script
 end script
-
-
-
-
-
-
-
-

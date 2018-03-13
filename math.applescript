@@ -1,21 +1,21 @@
-(**
- * Library for basic math functions
+(*!
+ * @header
+ * 		Library for basic math functions
  *
- * Darrick Herwehe http://www.exitcodeone.com
+ * 		Darrick Herwehe http://www.exitcodeone.com
  *)
-
 property version : "1.0"
 
 
-(**
+(*!
  * Type checking. Determine if a value is of the desired type. If not throw an error.
  *
  * This is for internal library use, so that the error checking is not all
  * over the place.
  *
  * @throws TypeError (704)
- * @param Any The value to check
- * @return Void
+ * @param n (Any): The value to check
+ * @return (Void)
  *)
 on _assert_is_number(n)
 	if class of n is not in {real, integer} then
@@ -36,8 +36,7 @@ on _assert_is_list(ls)
 end _assert_is_list
 
 
-
-(**
+(*!
  * Sum a list of numbers.
  *
  * Returns 0 if the list is empty.
@@ -46,8 +45,8 @@ end _assert_is_list
  *          --> 6
  *
  * @throws TypeError (704)
- * @param List The list of numbers
- * @return Number
+ * @param ls (List): The list of numbers
+ * @return (Number)
  *)
 on sum(ls)
 	_assert_is_list(ls)
@@ -65,15 +64,15 @@ on sum(ls)
 end sum
 
 
-(**
+(*!
  * Compute the average given a list of numbers
  *
  * @example avg({1, 2, 3, 4, 5})
  *          --> 3.0
  *
  * @throws TypeError (704)
- * @param List A list of numbers (can be reals or integers)
- * @return Real
+ * @param ls (List): A list of numbers (can be reals or integers)
+ * @return (Real)
  *)
 on avg(ls)
 	_assert_is_list(ls)
@@ -84,12 +83,12 @@ on avg(ls)
 end avg
 
 
-(**
+(*!
  * Calculate the absolute value of a number
  *
  * @throws TypeError (704)
- * @param Number
- * @return Number
+ * @param n (Number):
+ * @return (Number)
  *)
 on abs(n)
 	_assert_is_number(n)
@@ -100,7 +99,7 @@ on abs(n)
 end abs
 
 
-(**
+(*!
  * Calculate the largest item in a list
  *
  * Can be used for any type that can be compared, not just numbers. For example,
@@ -108,8 +107,8 @@ end abs
  * numbers cannot be compared to text. `max()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param List
- * @return Any
+ * @param ls (List):
+ * @return (Any)
  *)
 on max(ls)
 	_assert_is_list(ls)
@@ -123,7 +122,7 @@ on max(ls)
 end max
 
 
-(**
+(*!
  * Calculate the smallest item in a list
  *
  * Can be used for any type that can be compared, not just numbers. For example,
@@ -131,8 +130,8 @@ end max
  * numbers cannot be compared to text. `min()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param List
- * @return Any
+ * @param ls (List):
+ * @return (Any)
  *)
 on min(ls)
 	_assert_is_list(ls)
@@ -146,11 +145,11 @@ on min(ls)
 end min
 
 
-(**
+(*!
  * Determine the next integer up from the given number
  *
- * @param Number
- * @return Integer
+ * @param n (Number):
+ * @return (Integer)
  *)
 on ceil(n)
 	_assert_is_number(n)
@@ -158,11 +157,11 @@ on ceil(n)
 end ceil
 
 
-(**
+(*!
  * Determine the next integer down from the given number
  *
- * @param Number
- * @return Integer
+ * @param n (Number):
+ * @return (Integer)
  *)
 on floor(n)
 	_assert_is_number(n)
@@ -170,11 +169,11 @@ on floor(n)
 end floor
 
 
-(**
+(*!
  * Calculate the square root of a number
  *
- * @param Number
- * @return Real
+ * @param n (Number):
+ * @return (Real)
  *)
 on sqrt(n)
 	_assert_is_number(n)
@@ -183,11 +182,11 @@ on sqrt(n)
 end sqrt
 
 
-(**
+(*!
  * Determine if a number is even
  *
- * @param Number
- * @return Boolean
+ * @param n (Number):
+ * @return (Boolean)
  *)
 on is_even(n)
 	_assert_is_number(n)
@@ -195,11 +194,11 @@ on is_even(n)
 end is_even
 
 
-(**
+(*!
  * Determine if a number is odd
  *
- * @param Number
- * @return Boolean
+ * @param n (Number):
+ * @return (Boolean)
  *)
 on is_odd(n)
 	_assert_is_number(n)
