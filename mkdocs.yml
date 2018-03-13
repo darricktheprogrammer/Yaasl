@@ -1,0 +1,18 @@
+site_name: Yaasl
+theme: readthedocs
+extra_css:
+- rtd_compact.css
+markdown_extensions:
+- toc:
+    permalink: true
+- admonition
+pages:
+- Introduction: index.md
+- API Reference:
+  - list.applescript: api-reference/list.md
+  - functools.applescript: api-reference/functools.md
+  - string.applescript: api-reference/string.md
+  - ui.applescript: api-reference/ui.md
+  - system.applescript: api-reference/system.md
+  - math.applescript: api-reference/math.md
+
