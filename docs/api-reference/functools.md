@@ -3,7 +3,8 @@ Library to add additional functional programming support to Applescript. Contain
 
 For example, there are helper functions for coercion such as `tostring(x)`. Even though this is built into the language, the helper function is there so it can be passed into `map()` like in the following example: `map(funclib's tostring, theList)` will convert `{1, 2, 3}` to `{"1", "2", "3"}`.
 
-!!! warning Any function passed to `map` or `filter` that is not self contained (i.e., it calls another function) will cause an error. Once the function is passed to `functools`, it is then a property of the `functools` library, meaning it no longer has access to any of the functions in it's own library. Until a fix can be determined, only attempt to `map` or `filter` using self contained functions.
+!!! warning
+	Any function passed to `map` or `filter` that is not self contained (i.e., it calls another function) will cause an error. Once the function is passed to `functools`, it is then a property of the `functools` library, meaning it no longer has access to any of the functions in it's own library. Until a fix can be determined, only attempt to `map` or `filter` using self contained functions.
 
 # _FunctionRunner
 Object that is responsible for actually running a single function and returning a result.
