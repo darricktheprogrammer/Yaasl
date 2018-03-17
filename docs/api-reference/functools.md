@@ -9,34 +9,60 @@ For example, there are helper functions for coercion such as `tostring(x)`. Even
 
 # File level functions
 
-#### `contains_`
+#### `map`
 ```applescript
-contains_(x, ls)
+map(f, ls)
 ```
-Return `true` if the list `ls` contains `x`
+Create a new list by passing each item of a list through a function.
 
 <p class="attribute_section">Arguments</p>
 
-* **x** 
-* **ls** 
+* **f** [_Function_] 
+* **ls** [_List_] 
+
+<p class="attribute_section">Returns</p>
+
+* [_List_] 
 
 
+<p class="attribute_section">Examples</p>
 
+```applescript
+map(tostring, {1, 2, 3})
+--> {"1", "2", "3"}
+```
+
+```applescript
+map(len, {"hello", "world", "I'm", "here"})
+--> {5, 5, 3, 4}
+```
 <br/>
 
-#### `eq`
+#### `map_with_arg`
 ```applescript
-eq(x, y)
+map_with_arg(f, ls, arg)
 ```
-Return `true` if `x` equals `y`
+Same as `map()`, but with an additional argument.
+
+The last argument will be supplied as a second argument to the function.
 
 <p class="attribute_section">Arguments</p>
 
-* **x** 
-* **y** 
+* **f** [_Function_] 
+* **ls** [_List_] 
+* **arg** [_Any_] 
+
+<p class="attribute_section">Returns</p>
+
+* [_List_] 
 
 
+<p class="attribute_section">Examples</p>
 
+```applescript
+map_with_arg(add_value, {1, 2, 3}, 2)
+--> {3, 4, 5}
+```
 <br/>
 
 #### `filter`
@@ -88,6 +114,36 @@ The additional argument is usually used to make a comparison to the original val
 filter_with_arg(lte, {1, 2, 3, 4, 5, 6}, 4)
 --> {1, 2, 3, 4}
 ```
+<br/>
+
+#### `contains_`
+```applescript
+contains_(x, ls)
+```
+Return `true` if the list `ls` contains `x`
+
+<p class="attribute_section">Arguments</p>
+
+* **x** 
+* **ls** 
+
+
+
+<br/>
+
+#### `eq`
+```applescript
+eq(x, y)
+```
+Return `true` if `x` equals `y`
+
+<p class="attribute_section">Arguments</p>
+
+* **x** 
+* **y** 
+
+
+
 <br/>
 
 #### `gt`
@@ -192,62 +248,6 @@ Return `true` if `x` is less than or equal to `y`
 
 
 
-<br/>
-
-#### `map`
-```applescript
-map(f, ls)
-```
-Create a new list by passing each item of a list through a function.
-
-<p class="attribute_section">Arguments</p>
-
-* **f** [_Function_] 
-* **ls** [_List_] 
-
-<p class="attribute_section">Returns</p>
-
-* [_List_] 
-
-
-<p class="attribute_section">Examples</p>
-
-```applescript
-map(tostring, {1, 2, 3})
---> {"1", "2", "3"}
-```
-
-```applescript
-map(len, {"hello", "world", "I'm", "here"})
---> {5, 5, 3, 4}
-```
-<br/>
-
-#### `map_with_arg`
-```applescript
-map_with_arg(f, ls, arg)
-```
-Same as `map()`, but with an additional argument.
-
-The last argument will be supplied as a second argument to the function.
-
-<p class="attribute_section">Arguments</p>
-
-* **f** [_Function_] 
-* **ls** [_List_] 
-* **arg** [_Any_] 
-
-<p class="attribute_section">Returns</p>
-
-* [_List_] 
-
-
-<p class="attribute_section">Examples</p>
-
-```applescript
-map_with_arg(add_value, {1, 2, 3}, 2)
---> {3, 4, 5}
-```
 <br/>
 
 #### `neq`
