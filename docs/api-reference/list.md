@@ -1,8 +1,6 @@
 
 Library for working with and manipulating lists
 
-Darrick Herwehe http://www.exitcodeone.com
-
 
 
 # File level functions
@@ -63,7 +61,7 @@ Returns 0 if the item is not found.
 
 <p class="attribute_section">Arguments</p>
 
-* **theItem** [_String, Number_] The item to find in the list
+* **theItem** [_Any_] The item to find in the list
 * **ls** [_List_] The list in which to find the item
 
 <p class="attribute_section">Returns</p>
@@ -121,7 +119,7 @@ Basically the opposite of `diff()`
 <p class="attribute_section">Examples</p>
 
 ```applescript
-diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
+intersect({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
 --> {"a", "b"}
 ```
 <br/>
@@ -132,7 +130,7 @@ move_item(ls, oldindex, newindex)
 ```
 Move an item from one spot in the list to another.
 
-Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `targetIndex`, not `4`. @example move_item({"a", "b", "c"}, 1, 3) --> {"b", "c", "a"}
+Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `newindex`, not `4`. @example move_item({"a", "b", "c"}, 1, 3) --> {"b", "c", "a"}
 
 <p class="attribute_section">Arguments</p>
 
@@ -194,7 +192,7 @@ The first item will be the popped value. The second value will be the updated li
 
 If you just want to delete at an item at an index and do not care about the return value, you can run `pop_index()` and simply ignore the first return value.
 
-!!! warning: `pop_index()` does not support reverse indexing. You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
+!!! warning `pop_index()` does not support reverse indexing. You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
 
 <p class="attribute_section">Arguments</p>
 
@@ -230,7 +228,7 @@ If the item is not present in the list, the list will remain unchanged.
 
 <p class="attribute_section">Arguments</p>
 
-* **theItem** [_String, Number_]  The item to remove
+* **theItem** [_Any_]  The item to remove
 * **ls** [_List_] The list from which to remove the item.
 
 <p class="attribute_section">Returns</p>
@@ -302,6 +300,14 @@ Works the same way as `zip_many()` except for only two lists.
 * [_List_] 
 
 
+<p class="attribute_section">Examples</p>
+
+```applescript
+set l1 to {"a", "b", "c"}
+set l2 to {"d", "e", "f"}
+zip(l1, l2)
+--> {{"a", "d"}, {"b", "e"}, {"c", "f"}}
+```
 <br/>
 
 #### `zip_many`
@@ -326,13 +332,11 @@ If the lists are not the same length, the shortest will be used as the iteration
 <p class="attribute_section">Examples</p>
 
 ```applescript
-@example
 zip_many({})
 --> {}
 ```
 
 ```applescript
-@example
 set l1 to {"a", "b", "c"}
 set l2 to {"d", "e", "f"}
 set l3 to {1, 2, 3}
@@ -341,7 +345,6 @@ zip_many({l1, l2, l3})
 ```
 
 ```applescript
-@example
 set l1 to {"a", "b", "c"}
 set l2 to {"d", "e", "f"}
 set l3 to {"1"}

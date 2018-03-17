@@ -1,8 +1,6 @@
 
 Library for working with folders and files.
 
-Darrick Herwehe http://www.exitcodeone.com
-
 
 
 # File level functions

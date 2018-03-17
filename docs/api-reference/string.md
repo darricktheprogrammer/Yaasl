@@ -1,8 +1,6 @@
 
 Library for working with and manipulating text
 
-Darrick Herwehe http://www.exitcodeone.com
-
 
 
 # File level functions
@@ -37,8 +35,6 @@ As a convenience, if there is only one replacement to be made, the second argume
 
 To escape a set of braces, simply put an asterisk in between them. This will tell `format()` to ignore them, and they will be printed out as a standard set of braces.
 
-``` format("This is a {} string.", "test")         --> This is a test string. format("This is a {} string.", {"test"})       --> This is a test string. format("This is a {} {}", {"test", "string"})  --> This is a test string. format("This is a {} string.", {"test"})       --> This is a test string. format("These are {}: {*}.", {"curly braces"}) --> These are curly braces: {}. ```
-
 <p class="attribute_section">Arguments</p>
 
 * **str** [_String_] The original string formatting template.
@@ -49,6 +45,32 @@ To escape a set of braces, simply put an asterisk in between them. This will tel
 * [_String_] 
 
 
+<p class="attribute_section">Examples</p>
+
+```applescript
+format("This is a {} string.", "test")
+--> This is a test string.
+```
+
+```applescript
+format("This is a {} string.", {"test"})
+--> This is a test string.
+```
+
+```applescript
+format("This is a {} {}", {"test", "string"})
+--> This is a test string.
+```
+
+```applescript
+format("This is a {} string.", {"test"})
+--> This is a test string.
+```
+
+```applescript
+format("These are {}: {*}.", {"curly braces"})
+--> These are curly braces: {}.
+```
 <br/>
 
 #### `join`
@@ -91,7 +113,7 @@ Pad a string with spaces on the left until it reaches the desired width.
 ```applescript
 pad_left_with_char(char, str, padwidth)
 ```
-Pad a string with the given on the left until it reaches the desired width.
+Pad a string with the given character on the left until it reaches the desired width.
 
 <p class="attribute_section">Arguments</p>
 
@@ -128,7 +150,7 @@ Pad a string with spaces on the right until it reaches the desired width.
 ```applescript
 pad_right_with_char(char, str, padwidth)
 ```
-Pad a string with the given on the right until it reaches the desired width.
+Pad a string with the given character on the right until it reaches the desired width.
 
 <p class="attribute_section">Arguments</p>
 

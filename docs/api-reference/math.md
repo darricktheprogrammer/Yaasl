@@ -1,8 +1,6 @@
 
 Library for basic math functions
 
-Darrick Herwehe http://www.exitcodeone.com
-
 
 
 # File level functions
@@ -17,7 +15,7 @@ This is for internal library use, so that the error checking is not all over the
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Any_] The value to check
+* **n** [_Any_]  The value to check
 
 <p class="attribute_section">Returns</p>
 
@@ -34,7 +32,7 @@ Calculate the absolute value of a number
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -51,7 +49,7 @@ Compute the average given a list of numbers
 
 <p class="attribute_section">Arguments</p>
 
-* **ls** [_List_] A list of numbers (can be reals or integers)
+* **ls** [_List_]  A list of numbers (can be reals or integers)
 
 <p class="attribute_section">Returns</p>
 
@@ -74,7 +72,7 @@ Determine the next integer up from the given number
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -91,7 +89,7 @@ Determine the next integer down from the given number
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -108,7 +106,7 @@ Determine if a number is even
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -125,7 +123,7 @@ Determine if a number is odd
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -144,7 +142,7 @@ Can be used for any type that can be compared, not just numbers. For example, te
 
 <p class="attribute_section">Arguments</p>
 
-* **ls** [_List_] :
+* **ls** [_List_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -163,7 +161,7 @@ Can be used for any type that can be compared, not just numbers. For example, te
 
 <p class="attribute_section">Arguments</p>
 
-* **ls** [_List_] :
+* **ls** [_List_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -180,7 +178,7 @@ Calculate the square root of a number
 
 <p class="attribute_section">Arguments</p>
 
-* **n** [_Number_] :
+* **n** [_Number_] 
 
 <p class="attribute_section">Returns</p>
 
@@ -199,7 +197,7 @@ Returns 0 if the list is empty.
 
 <p class="attribute_section">Arguments</p>
 
-* **ls** [_List_] The list of numbers
+* **ls** [_List_]  The list of numbers
 
 <p class="attribute_section">Returns</p>
 
