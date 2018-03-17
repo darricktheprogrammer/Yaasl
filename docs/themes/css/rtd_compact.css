@@ -12,11 +12,8 @@ p.attribute_section {
 	color: #2980B9;
 }
 
-code, .rst-content tt {
-	font-size: 95%;
-}
 
-.rst-content h1 code {
+.rst-content h4 code {
 	background: #e7f2fa;
 	padding: .5em;
 	padding-left: .4em;
@@ -31,3 +28,10 @@ code, .rst-content tt {
 }
 
 
+/* I am not great at css. I feel like this is clunky and probably wrong, but it
+ * works, so I'm going with it.
+ */
+code:not(.hljs), .rst-content tt:not(.hljs), .rst-content code:not(.hljs) :not(h4) {
+	font-size: 95%;
+	color: #E74C3C;
+}

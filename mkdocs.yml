@@ -1,7 +1,9 @@
 site_name: Yaasl
-theme: readthedocs
+theme:
+  name: null
+  custom_dir: docs/themes/rtd_dropdown
 extra_css:
-- rtd_compact.css
+- themes/css/rtd_compact.css
 markdown_extensions:
 - toc:
     permalink: true
