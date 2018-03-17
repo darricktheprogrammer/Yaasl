@@ -9,7 +9,7 @@
  * 		For example, there are helper functions for coercion such as `tostring(x)`.
  * 		Even though this is built into the language, the helper function is there
  * 		so it can be passed into `map()` like in the following example:
- * 		`map(funclib's tostring, theList)` will convert {1, 2, 3} to {"1", "2", "3"}.
+ * 		`map(funclib's tostring, theList)` will convert `{1, 2, 3}` to `{"1", "2", "3"}`.
  *
  * 		!!! warning: Any function passed to `map` or `filter` that is not
  * 		self contained (i.e., calls another function) will error out. Once the
@@ -24,77 +24,77 @@ property version : "1.0"
 
 -- Helper functions
 
-(*! Return true if x is less than y *)
+(*! Return `true` if `x` is less than `y` *)
 on lt(x, y)
 	return x < y
 end lt
 
-(*! Return true if x is less than or equal to y *)
+(*! Return `true` if `x` is less than or equal to `y` *)
 on lte(x, y)
 	return x ≤ y
 end lte
 
-(*! Return true if x greater than y *)
+(*! Return `true` if `x` greater than `y` *)
 on gt(x, y)
 	x > y
 end gt
 
-(*! Return true if x greater than or equal to y *)
+(*! Return `true` if `x` greater than or equal to `y` *)
 on gte(x, y)
 	return x ≥ y
 end gte
 
-(*! Return true if x equals y *)
+(*! Return `true` if `x` equals `y` *)
 on eq(x, y)
 	return x = y
 end eq
 
-(*! Return true if x does not equal y *)
+(*! Return `true` if `x` does not equal `y` *)
 on neq(x, y)
 	return x ≠ y
 end neq
 
-(*! Return true if x is in the list ls *)
+(*! Return `true` if `x` is in the list `ls` *)
 on isin(x, ls)
 	return x is in ls
 end isin
 
-(*! Return true if the list ls contains x *)
+(*! Return `true` if the list `ls` contains `x` *)
 on contains_(x, ls)
 	return isin(x, ls)
 end contains_
 
-(*! Return true if class of x cls *)
+(*! Return `true` if class of `x` is `cls` *)
 on isclass(x, cls)
 	return class of x is cls
 end isclass
 
-(*! Return the count of x *)
+(*! Return the count of `x` *)
 on len(x)
 	return (count x)
 end len
 
-(*! Coerce x to a string *)
+(*! Coerce `x` to a string *)
 on tostring(x)
 	return x as string
 end tostring
 
-(*! Coerce x to a real number *)
+(*! Coerce `x` to a real number *)
 on toreal(x)
 	return x as real
 end toreal
 
-(*! Coerce x to an integer *)
+(*! Coerce `x` to an integer *)
 on toint(x)
 	return x as integer
 end toint
 
-(*! Coerce x to a generic number *)
+(*! Coerce `x` to a generic number *)
 on tonum(x)
 	return x as number
 end tonum
 
-(*! Coerce x to a list *)
+(*! Coerce `x` to a list *)
 on tolist(x)
 	return x as list
 end tolist
