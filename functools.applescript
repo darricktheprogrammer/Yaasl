@@ -111,8 +111,8 @@ script _FunctionRunner
 	 *
 	 * The arg will be an item in a list.
 	 *
-	 * @param f (Function): The function to run
-	 * @param arg (Any): An argument to the function
+	 * @param f (Function) The function to run
+	 * @param arg (Any) An argument to the function
 	 * @return (Any)
 	 *)
 	on runit(f, arg)
@@ -127,9 +127,9 @@ script _FunctionRunner
 	 * extra argument needed for the function. This argument may be used as
 	 * a comparison point or operator against the first argument.
 	 *
-	 * @param f (Function): The function to run
-	 * @param arg (Any): An argument to the function
-	 * @param extra_arg (Any): The second argument. Either a comparison point or
+	 * @param f (Function) The function to run
+	 * @param arg (Any) An argument to the function
+	 * @param extra_arg (Any) The second argument. Either a comparison point or
 	 *                         operator against the first argument
 	 * @return (Any)
 	 *)
@@ -149,8 +149,8 @@ end script
  * @example map(len, {"hello", "world", "I'm", "here"})
  *          	--> {5, 5, 3, 4}
  *
- * @param f (Function):
- * @param ls (List):
+ * @param f (Function)
+ * @param ls (List)
  * @return (List)
  *)
 on map(f, ls)
@@ -167,8 +167,8 @@ end map
  * @example filter(is_even, {1, 2, 3})
  *          	--> {2}
  *
- * @param f (Function):
- * @param ls (List):
+ * @param f (Function)
+ * @param ls (List)
  * @return (List)
  *)
 on filter(f, ls)
@@ -190,9 +190,9 @@ end filter
  * @example mapWithArg(add_value, {1, 2, 3}, 2)
  *          	--> {3, 4, 5}
  *
- * @param f (Function):
- * @param ls (List):
- * @param arg (Any):
+ * @param f (Function)
+ * @param ls (List)
+ * @param arg (Any)
  * @return (List)
  *)
 on mapWithArg(f, ls, arg)
@@ -212,9 +212,9 @@ end mapWithArg
  * @example filterWithArg(lte, {1, 2, 3, 4, 5, 6}, 4)
  *          	--> {1, 2, 3, 4}
  *
- * @param f (Function):
- * @param ls (List):
- * @param arg (Any):
+ * @param f (Function)
+ * @param ls (List)
+ * @param arg (Any)
  * @return (List)
  *)
 on filterWithArg(f, ls, arg)

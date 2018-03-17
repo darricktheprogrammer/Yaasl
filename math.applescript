@@ -13,7 +13,7 @@ property version : "1.0"
  * over the place.
  *
  * @throws TypeError (704)
- * @param n (Any): The value to check
+ * @param n (Any) The value to check
  * @return (Void)
  *)
 on _assert_is_number(n)
@@ -44,7 +44,7 @@ end _assert_is_list
  *          --> 6
  *
  * @throws TypeError (704)
- * @param ls (List): The list of numbers
+ * @param ls (List) The list of numbers
  * @return (Number)
  *)
 on sum(ls)
@@ -70,7 +70,7 @@ end sum
  *          --> 3.0
  *
  * @throws TypeError (704)
- * @param ls (List): A list of numbers (can be reals or integers)
+ * @param ls (List) A list of numbers (can be reals or integers)
  * @return (Real)
  *)
 on avg(ls)
@@ -86,7 +86,7 @@ end avg
  * Calculate the absolute value of a number
  *
  * @throws TypeError (704)
- * @param n (Number):
+ * @param n (Number)
  * @return (Number)
  *)
 on abs(n)
@@ -106,7 +106,7 @@ end abs
  * numbers cannot be compared to text. `max()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param ls (List):
+ * @param ls (List)
  * @return (Any)
  *)
 on max(ls)
@@ -129,7 +129,7 @@ end max
  * numbers cannot be compared to text. `min()` does not try to error check
  * item types and leaves it up to you to follow Applescript's comparison rules.
  *
- * @param ls (List):
+ * @param ls (List)
  * @return (Any)
  *)
 on min(ls)
@@ -147,7 +147,7 @@ end min
 (*!
  * Determine the next integer up from the given number
  *
- * @param n (Number):
+ * @param n (Number)
  * @return (Integer)
  *)
 on ceil(n)
@@ -159,7 +159,7 @@ end ceil
 (*!
  * Determine the next integer down from the given number
  *
- * @param n (Number):
+ * @param n (Number)
  * @return (Integer)
  *)
 on floor(n)
@@ -171,7 +171,7 @@ end floor
 (*!
  * Calculate the square root of a number
  *
- * @param n (Number):
+ * @param n (Number)
  * @return (Real)
  *)
 on sqrt(n)
@@ -184,7 +184,7 @@ end sqrt
 (*!
  * Determine if a number is even
  *
- * @param n (Number):
+ * @param n (Number)
  * @return (Boolean)
  *)
 on is_even(n)
@@ -196,7 +196,7 @@ end is_even
 (*!
  * Determine if a number is odd
  *
- * @param n (Number):
+ * @param n (Number)
  * @return (Boolean)
  *)
 on is_odd(n)
