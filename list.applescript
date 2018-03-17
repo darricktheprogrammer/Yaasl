@@ -189,7 +189,7 @@ end pop
  *
  * Returns 0 if the item is not found.
  *
- * @param theItem (String, Number): The item to find in the list
+ * @param theItem (Any): The item to find in the list
  * @param ls (List): The list in which to find the item
  * @return (Integer)
  *)
@@ -237,7 +237,7 @@ end index_of
  *
  * If the item is not present in the list, the list will remain unchanged.
  *
- * @param theItem (String, Number) The item to remove
+ * @param theItem (Any) The item to remove
  * @param ls (List): The list from which to remove the item.
  * @return (List)
  *)
