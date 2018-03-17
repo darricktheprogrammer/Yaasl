@@ -2,7 +2,6 @@
  * @header
  * 		Library for basic math functions
  *
- * 		Darrick Herwehe http://www.exitcodeone.com
  *)
 property version : "1.0"
 
