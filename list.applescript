@@ -106,9 +106,10 @@ end insert
  * the return value, you can run `pop_index()` and simply ignore the first
  * return value.
  *
- * !!! warning: `pop_index()` does not support reverse indexing. You will
- * receive an error for `pop_index(-1, ls)`. To reverse index you will need to
- * pass the actual index number to be popped: `pop_index((count ls), ls)`
+ * !!! warning
+ *     `pop_index()` does not support reverse indexing. You will
+ *     receive an error for `pop_index(-1, ls)`. To reverse index you will need
+ *     to pass the actual index number to be popped: `pop_index((count ls), ls)`
  *
  * @example -- Pop an item and get its value
  *          listlib's pop_index(2, {"a", "b", "c"})
