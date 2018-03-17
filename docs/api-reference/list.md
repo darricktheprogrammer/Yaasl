@@ -130,7 +130,7 @@ move_item(ls, oldindex, newindex)
 ```
 Move an item from one spot in the list to another.
 
-Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `newindex`, not `4`. @example move_item({"a", "b", "c"}, 1, 3) --> {"b", "c", "a"}
+Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `newindex`, not `4`.
 
 <p class="attribute_section">Arguments</p>
 
@@ -144,6 +144,11 @@ Note that `move_item` removes the item from the list _first_, then readds it in 
 
 
 <p class="attribute_section">Examples</p>
+
+```applescript
+move_item({"a", "b", "c"}, 1, 3)
+--> {"b", "c", "a"}
+```
 
 ```applescript
 move_item({"a", "b", "c"}, 1, 4)
