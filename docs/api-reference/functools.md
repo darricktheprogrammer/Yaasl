@@ -6,51 +6,6 @@ For example, there are helper functions for coercion such as `tostring(x)`. Even
 !!! warning
 	Any function passed to `map` or `filter` that is not self contained (i.e., it calls another function) will cause an error. Once the function is passed to `functools`, it is then a property of the `functools` library, meaning it no longer has access to any of the functions in it's own library. Until a fix can be determined, only attempt to `map` or `filter` using self contained functions.
 
-# _FunctionRunner
-Object that is responsible for actually running a single function and returning a result.
-
-#### `_FunctionRunner.runit`
-```applescript
-runit(f, arg)
-```
-Run a given function with a single argument.
-
-The arg will be an item in a list.
-
-<p class="attribute_section">Arguments</p>
-
-* **f** [_Function_]  The function to run
-* **arg** [_Any_]  An argument to the function
-
-<p class="attribute_section">Returns</p>
-
-* [_Any_] 
-
-
-<br/>
-
-#### `_FunctionRunner.runwitharg`
-```applescript
-runwitharg(f, arg, extra_arg)
-```
-Run a given function with two arguments.
-
-The first argument will be the item from a list. The second will be an extra argument needed for the function. This argument may be used as a comparison point or operator against the first argument.
-
-<p class="attribute_section">Arguments</p>
-
-* **f** [_Function_]  The function to run
-* **arg** [_Any_]  An argument to the function
-* **extra_arg** [_Any_]  The second argument. Either a comparison point or operator against the first argument
-
-<p class="attribute_section">Returns</p>
-
-* [_Any_] 
-
-
-<br/>
-
-
 
 # File level functions
 
