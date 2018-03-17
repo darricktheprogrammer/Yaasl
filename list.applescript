@@ -334,7 +334,7 @@ end intersect
  *
  * Note that `move_item` removes the item from the list _first_, then readds it
  * in the desired location. So, if you want to move an item to the end of a
- * 3 item list, you would specify `3` as the `targetIndex`, not `4`.
+ * 3 item list, you would specify `3` as the `newindex`, not `4`.
  *
  * @example move_item({"a", "b", "c"}, 1, 3)
  *          --> {"b", "c", "a"}
