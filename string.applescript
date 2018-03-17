@@ -297,13 +297,20 @@ end pad_right_with_char
  * To escape a set of braces, simply put an asterisk in between them. This will
  * tell `format()` to ignore them, and they will be printed out as a standard set of braces.
  *
- * ```
- * format("This is a {} string.", "test")         --> This is a test string.
- * format("This is a {} string.", {"test"})       --> This is a test string.
- * format("This is a {} {}", {"test", "string"})  --> This is a test string.
- * format("This is a {} string.", {"test"})       --> This is a test string.
- * format("These are {}: {*}.", {"curly braces"}) --> These are curly braces: {}.
- * ```
+ * @example format("This is a {} string.", "test")
+ * 			--> This is a test string.
+ *
+ * @example format("This is a {} string.", {"test"})
+ * 			--> This is a test string.
+ *
+ * @example format("This is a {} {}", {"test", "string"})
+ * 			--> This is a test string.
+ *
+ * @example format("This is a {} string.", {"test"})
+ * 			--> This is a test string.
+ *
+ * @example format("These are {}: {*}.", {"curly braces"})
+ * 			--> These are curly braces: {}.
  *
  * @param str (String): The original string formatting template.
  * @param args (String, List) One or more strings used to replace `{}`

@@ -296,7 +296,7 @@ end diff
  *
  * Basically the opposite of `diff()`
  *
- * @example diff({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
+ * @example intersect({"a", "b", "c", "d"}, {"a", "b", "e", "f"})
  *          --> {"a", "b"}
  *
  * @param l1 (List): The first list to compare. This is where the result set
@@ -452,23 +452,21 @@ end count_instances
  * iteration count, and the remaining items of the longer lists
  * will be thrown away.
  *
- * @example
- * 		zip_many({})
- * 		--> {}
+ * @example zip_many({})
+ * 		    --> {}
  *
- * @example
- * 		set l1 to {"a", "b", "c"}
- * 		set l2 to {"d", "e", "f"}
- * 		set l3 to {1, 2, 3}
- * 		zip_many({l1, l2, l3})
- * 		--> {{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}
  *
- * @example
- * 		set l1 to {"a", "b", "c"}
- * 		set l2 to {"d", "e", "f"}
- * 		set l3 to {"1"}
- * 		zip_many({l1, l2, l3})
- * 		--> {{"a", "d", 1}}
+ * @example set l1 to {"a", "b", "c"}
+ * 		    set l2 to {"d", "e", "f"}
+ * 		    set l3 to {1, 2, 3}
+ * 		    zip_many({l1, l2, l3})
+ * 		    --> {{"a", "d", 1}, {"b", "e", 2}, {"c", "f", 3}}
+ *
+ * @example set l1 to {"a", "b", "c"}
+ * 		    set l2 to {"d", "e", "f"}
+ * 		    set l3 to {"1"}
+ * 		    zip_many({l1, l2, l3})
+ * 		    --> {{"a", "d", 1}}
  *
  * @param ls (List): A list of lists
  * @return (List)
@@ -503,6 +501,11 @@ end zip_many
  * Zip two lists together, creating a list of 2-item lists.
  *
  * Works the same way as `zip_many()` except for only two lists.
+ *
+ * @example set l1 to {"a", "b", "c"}
+ * 		    set l2 to {"d", "e", "f"}
+ * 		    zip(l1, l2)
+ * 		    --> {{"a", "d"}, {"b", "e"}, {"c", "f"}}
  *
  * @param ls1 (List):
  * @param ls2 (List):
