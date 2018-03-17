@@ -18,8 +18,6 @@
  * 		library. Until a fix can be determined, only attempt to `map` or `filter`
  * 		using self contained functions.
  *
- * 		Darrick Herwehe http://www.exitcodeone.com
- * @unordered
  *)
 property version : "1.0"
 
