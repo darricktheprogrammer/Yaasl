@@ -14,18 +14,24 @@ Yaasl comes with a full test suite and complete auto-api documentation.
 
 Open each library in Script Editor and save as a compiled script. Or compile on the command line using `osacompile`:
 
-    osacompile ./list.applescript > "~/Library/Script Libraries/list.scpt"
+```bash
+osacompile ./list.applescript > "~/Library/Script Libraries/list.scpt"
+```
 
 # Usage
 
 If you've installed the libraries in the `Script Libraries` folder, you can import libraries with the `use` statement.
 
-    use strlib: script "string"
-    strlib's format("This is a {} string", "test")
-    --> This is a test string
+```applescript
+use strlib: script "string"
+strlib's format("This is a {} string", "test")
+--> This is a test string
+```
 
 If the libraries are located elsewhere, use them by using the `load script` statement
 
-	set strlib to load script file "/path/to/string.scpt"
-    strlib's format("This is a {} string", "test")
-    --> This is a test string
+```applescript
+set strlib to load script file "/path/to/string.scpt"
+strlib's format("This is a {} string", "test")
+--> This is a test string
+```
