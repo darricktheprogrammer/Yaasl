@@ -188,7 +188,7 @@ end filter
  *
  * The last argument will be supplied as a second argument to the function.
  *
- * @example mapWithArg(add_value, {1, 2, 3}, 2)
+ * @example map_with_arg(add_value, {1, 2, 3}, 2)
  *          	--> {3, 4, 5}
  *
  * @param f (Function)
@@ -196,12 +196,12 @@ end filter
  * @param arg (Any)
  * @return (List)
  *)
-on mapWithArg(f, ls, arg)
+on map_with_arg(f, ls, arg)
 	if ls = {} then
 		return ls
 	end if
-	return _FunctionRunner's runwitharg(f, item 1 of ls, arg) & mapWithArg(f, rest of ls, arg)
-end mapWithArg
+	return _FunctionRunner's runwitharg(f, item 1 of ls, arg) & map_with_arg(f, rest of ls, arg)
+end map_with_arg
 
 
 (*!
@@ -210,7 +210,7 @@ end mapWithArg
  * The additional argument is usually used to make a comparison to the
  * original value.
  *
- * @example filterWithArg(lte, {1, 2, 3, 4, 5, 6}, 4)
+ * @example filter_with_arg(lte, {1, 2, 3, 4, 5, 6}, 4)
  *          	--> {1, 2, 3, 4}
  *
  * @param f (Function)
@@ -218,12 +218,12 @@ end mapWithArg
  * @param arg (Any)
  * @return (List)
  *)
-on filterWithArg(f, ls, arg)
+on filter_with_arg(f, ls, arg)
 	if ls = {} then
 		return {}
 	else if not _FunctionRunner's runwitharg(f, item 1 of ls, arg) then
-		return {} & filterWithArg(f, rest of ls, arg)
+		return {} & filter_with_arg(f, rest of ls, arg)
 	else
-		return {item 1 of ls} & filterWithArg(f, rest of ls, arg)
+		return {item 1 of ls} & filter_with_arg(f, rest of ls, arg)
 	end if
-end filterWithArg
+end filter_with_arg

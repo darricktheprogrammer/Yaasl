@@ -42,13 +42,13 @@ script MapTest
 
 	script mapWithArgs_GivenFunction_MapsResults
 		property parent : UnitTest(me)
-		set val to my funclib's mapWithArg(my funclib's isclass, {1, 2, 3}, string)
+		set val to my funclib's map_with_arg(my funclib's isclass, {1, 2, 3}, string)
 		assertEqual(val, {false, false, false})
 	end script
 
 	script mapWithArgs_GivenEmptyList_ReturnsEmptyList
 		property parent : UnitTest(me)
-		set val to my funclib's mapWithArg(my funclib's isclass, {}, string)
+		set val to my funclib's map_with_arg(my funclib's isclass, {}, string)
 		assertEqual(val, {})
 	end script
 end script
@@ -76,13 +76,13 @@ script FilterTest
 	script filterWithArgs_GivenHelperFunction_FiltersValues
 		property parent : UnitTest(me)
 		set vals to {"string", {a:"record"}, 1, "anotherstring"}
-		set val to my funclib's filterWithArg(my funclib's isclass, vals, string)
+		set val to my funclib's filter_with_arg(my funclib's isclass, vals, string)
 		assertEqual(val, {"string", "anotherstring"})
 	end script
 
 	script filterWithArg_GivenEmptyList_ReturnsEmptyList
 		property parent : UnitTest(me)
-		set val to my funclib's filterWithArg(my funclib's isclass, {}, string)
+		set val to my funclib's filter_with_arg(my funclib's isclass, {}, string)
 		assertEqual(val, {})
 	end script
 end script
