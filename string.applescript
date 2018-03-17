@@ -241,7 +241,8 @@ end pad_right
 
 
 (*!
- * Pad a string with the given on the left until it reaches the desired width.
+ * Pad a string with the given character on the left until it reaches the
+ * desired width.
  *
  * @param char (Char): A single character to be used for padding.
  * @param str (String): The string to pad.
@@ -262,7 +263,8 @@ end pad_left_with_char
 
 
 (*!
- * Pad a string with the given on the right until it reaches the desired width.
+ * Pad a string with the given character on the right until it reaches the
+ * desired width.
  *
  * @param char (Char): A single character to be used for padding.
  * @param str (String): The string to pad.
