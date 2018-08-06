@@ -1,0 +1,37 @@
+.section ul, article ul {
+	list-style: none;
+	list-style-type: none;
+}
+
+.wy-plain-list-disc li, .rst-content .section ul li, .rst-content .toctree-wrapper ul li, article ul li {
+	list-style: none;
+}
+
+p.attribute_section {
+	margin-bottom: 0;
+	color: #2980B9;
+}
+
+
+.rst-content h4 code {
+	background: #e7f2fa;
+	padding: .5em;
+	padding-left: .4em;
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-top-color: #2980B9;
+	border-right: none;
+	border-left: none;
+	border-bottom: none;
+	color: #000000;
+	font-size: 75%;
+}
+
+
+/* I am not great at css. I feel like this is clunky and probably wrong, but it
+ * works, so I'm going with it.
+ */
+code:not(.hljs), .rst-content tt:not(.hljs), .rst-content code:not(.hljs) :not(h4) {
+	font-size: 95%;
+	color: #E74C3C;
+}
