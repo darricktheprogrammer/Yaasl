@@ -130,7 +130,7 @@ move_item(ls, oldindex, newindex)
 ```
 Move an item from one spot in the list to another.
 
-Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `newindex`, not `4`.
+Note that `move_item` removes the item from the list _first_, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify `3` as the `newindex`, not `4`. @example move_item({"a", "b", "c"}, 1, 3) --> {"b", "c", "a"}
 
 <p class="attribute_section">Arguments</p>
 
@@ -144,11 +144,6 @@ Note that `move_item` removes the item from the list _first_, then readds it in 
 
 
 <p class="attribute_section">Examples</p>
-
-```applescript
-move_item({"a", "b", "c"}, 1, 3)
---> {"b", "c", "a"}
-```
 
 ```applescript
 move_item({"a", "b", "c"}, 1, 4)
@@ -197,8 +192,7 @@ The first item will be the popped value. The second value will be the updated li
 
 If you just want to delete at an item at an index and do not care about the return value, you can run `pop_index()` and simply ignore the first return value.
 
-!!! warning
-	`pop_index()` does not support reverse indexing. You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
+!!! warning `pop_index()` does not support reverse indexing. You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
 
 <p class="attribute_section">Arguments</p>
 
