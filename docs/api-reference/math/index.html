@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>math.applescript - Yaasl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../themes/css/rtd_compact.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "math.applescript";
+    var mkdocs_page_input_path = "api-reference/math.md";
+    var mkdocs_page_url = "/api-reference/math/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Yaasl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	  
+          
+		  
+  <ul class="" href="../..">
+    <li class="toctree-l1">
+  <a class="" href="../..">Introduction</a>
+  </li></ul>
+          
+		  
+  <p class="caption">API Reference</p>
+  <ul class="current">
+          <li class="toctree-l1">
+            
+  <a class="" href="../list/">list.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../functools/">functools.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../string/">string.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../ui/">ui.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../system/">system.applescript</a>
+        </li>
+          <li class="toctree-l1 current">
+            
+  <a class="current" href="./">math.applescript</a>
+  <ul class="subnav">
+      
+  <li class="toctree-l2 current">
+  
+    <a class="current"  href="#file-level-functions">File level functions</a>
+  
+  
+    <ul class="">
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#_assert_is_number">_assert_is_number</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#abs">abs</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#avg">avg</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#ceil">ceil</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#floor">floor</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#is_even">is_even</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#is_odd">is_odd</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#max">max</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#min">min</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#sqrt">sqrt</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#sum">sum</a>
+        </li>
+    
+    </ul>
+  
+  </li>
+
+  </ul>
+        </li>
+  </ul>
+
+          
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Yaasl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Reference &raquo;</li>
+        
+      
+    
+    <li>math.applescript</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Library for basic math functions</p>
+<h1 id="file-level-functions">File level functions<a class="headerlink" href="#file-level-functions" title="Permanent link">&para;</a></h1>
+<h4 id="_assert_is_number"><code>_assert_is_number</code><a class="headerlink" href="#_assert_is_number" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">_assert_is_number(n)
+</code></pre>
+
+<p>Type checking. Determine if a value is of the desired type. If not throw an error.</p>
+<p>This is for internal library use, so that the error checking is not all over the place.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Any</em>]  The value to check</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Void</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="abs"><code>abs</code><a class="headerlink" href="#abs" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">abs(n)
+</code></pre>
+
+<p>Calculate the absolute value of a number</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Number</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="avg"><code>avg</code><a class="headerlink" href="#avg" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">avg(ls)
+</code></pre>
+
+<p>Compute the average given a list of numbers</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>]  A list of numbers (can be reals or integers)</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Real</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">avg({1, 2, 3, 4, 5})
+--&gt; 3.0
+</code></pre>
+
+<p><br/></p>
+<h4 id="ceil"><code>ceil</code><a class="headerlink" href="#ceil" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">ceil(n)
+</code></pre>
+
+<p>Determine the next integer up from the given number</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Integer</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="floor"><code>floor</code><a class="headerlink" href="#floor" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">floor(n)
+</code></pre>
+
+<p>Determine the next integer down from the given number</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Integer</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="is_even"><code>is_even</code><a class="headerlink" href="#is_even" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">is_even(n)
+</code></pre>
+
+<p>Determine if a number is even</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Boolean</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="is_odd"><code>is_odd</code><a class="headerlink" href="#is_odd" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">is_odd(n)
+</code></pre>
+
+<p>Determine if a number is odd</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Boolean</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="max"><code>max</code><a class="headerlink" href="#max" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">max(ls)
+</code></pre>
+
+<p>Calculate the largest item in a list</p>
+<p>Can be used for any type that can be compared, not just numbers. For example, text can be compared where <code>b &gt; a</code>. However, lists cannot be compared, and numbers cannot be compared to text. <code>max()</code> does not try to error check item types and leaves it up to you to follow Applescript's comparison rules.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Any</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="min"><code>min</code><a class="headerlink" href="#min" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">min(ls)
+</code></pre>
+
+<p>Calculate the smallest item in a list</p>
+<p>Can be used for any type that can be compared, not just numbers. For example, text can be compared where <code>b &lt; a</code>. However, lists cannot be compared, and numbers cannot be compared to text. <code>min()</code> does not try to error check item types and leaves it up to you to follow Applescript's comparison rules.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Any</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="sqrt"><code>sqrt</code><a class="headerlink" href="#sqrt" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">sqrt(n)
+</code></pre>
+
+<p>Calculate the square root of a number</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>n</strong> [<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Real</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="sum"><code>sum</code><a class="headerlink" href="#sum" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">sum(ls)
+</code></pre>
+
+<p>Sum a list of numbers.</p>
+<p>Returns 0 if the list is empty.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>]  The list of numbers</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Number</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">sum({1, 2, 3})
+--&gt; 6
+</code></pre>
+
+<p><br/></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../system/" class="btn btn-neutral" title="system.applescript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../system/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

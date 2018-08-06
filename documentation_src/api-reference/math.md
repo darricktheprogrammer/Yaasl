@@ -5,6 +5,25 @@ Library for basic math functions
 
 # File level functions
 
+#### `_assert_is_number`
+```applescript
+_assert_is_number(n)
+```
+Type checking. Determine if a value is of the desired type. If not throw an error.
+
+This is for internal library use, so that the error checking is not all over the place.
+
+<p class="attribute_section">Arguments</p>
+
+* **n** [_Any_]  The value to check
+
+<p class="attribute_section">Returns</p>
+
+* [_Void_] 
+
+
+<br/>
+
 #### `abs`
 ```applescript
 abs(n)

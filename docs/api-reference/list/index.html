@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>list.applescript - Yaasl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../themes/css/rtd_compact.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "list.applescript";
+    var mkdocs_page_input_path = "api-reference/list.md";
+    var mkdocs_page_url = "/api-reference/list/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Yaasl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	  
+          
+		  
+  <ul class="" href="../..">
+    <li class="toctree-l1">
+  <a class="" href="../..">Introduction</a>
+  </li></ul>
+          
+		  
+  <p class="caption">API Reference</p>
+  <ul class="current">
+          <li class="toctree-l1 current">
+            
+  <a class="current" href="./">list.applescript</a>
+  <ul class="subnav">
+      
+  <li class="toctree-l2 current">
+  
+    <a class="current"  href="#file-level-functions">File level functions</a>
+  
+  
+    <ul class="">
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#count_instances">count_instances</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#diff">diff</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#index_of">index_of</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#insert">insert</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#intersect">intersect</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#move_item">move_item</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pop">pop</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pop_index">pop_index</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#remove">remove</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#sort">sort</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#unique">unique</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#zip">zip</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#zip_many">zip_many</a>
+        </li>
+    
+    </ul>
+  
+  </li>
+
+  </ul>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../functools/">functools.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../string/">string.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../ui/">ui.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../system/">system.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../math/">math.applescript</a>
+        </li>
+  </ul>
+
+          
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Yaasl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Reference &raquo;</li>
+        
+      
+    
+    <li>list.applescript</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Library for working with and manipulating lists</p>
+<h1 id="file-level-functions">File level functions<a class="headerlink" href="#file-level-functions" title="Permanent link">&para;</a></h1>
+<h4 id="count_instances"><code>count_instances</code><a class="headerlink" href="#count_instances" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">count_instances(value, ls)
+</code></pre>
+
+<p>Count the amount of times an item appears in a list.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>value</strong> [<em>Any</em>] The item to find</li>
+<li><strong>ls</strong> [<em>List</em>] The list to search for the value.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Integer</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="diff"><code>diff</code><a class="headerlink" href="#diff" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">diff(l1, l2)
+</code></pre>
+
+<p>Return the values of the first list that are not present in the second list.</p>
+<p>Because of Applescript comparison limitations, records and lists are not supported by this routine. Any lists containing a record or list will throw a TypeError.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>l1</strong> [<em>List</em>] The first list to compare. This is where the result set will come from.</li>
+<li><strong>l2</strong> [<em>List</em>] The list that is being compared to</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">diff({&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;}, {&quot;a&quot;, &quot;b&quot;, &quot;e&quot;, &quot;f&quot;})
+--&gt; {&quot;c&quot;, &quot;d&quot;}
+</code></pre>
+
+<p><br/></p>
+<h4 id="index_of"><code>index_of</code><a class="headerlink" href="#index_of" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">index_of(theItem, ls)
+</code></pre>
+
+<p>Get the index of the first occurrence of an item in a list.</p>
+<p>Applescript provides the <code>offset</code> command for strings, but does not provide a way to get the index of an item in a list. This provides that missing functionality.</p>
+<p>Returns 0 if the item is not found.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>theItem</strong> [<em>Any</em>] The item to find in the list</li>
+<li><strong>ls</strong> [<em>List</em>] The list in which to find the item</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>Integer</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="insert"><code>insert</code><a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">insert(theItem, ix, ls)
+</code></pre>
+
+<p>Insert an item into a given position in a list.</p>
+<p>The item will be placed in the position before the given index, so <code>insert(x, 1, ls)</code> will be placed in the first position and <code>insert(x, (count ls) + 1, ls)</code> is the same as <code>set end of ls to x</code>.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>theItem</strong> [<em>Any</em>] The item to insert into the list</li>
+<li><strong>ix</strong> [<em>Integer</em>] The index where the item should be inserted into the list</li>
+<li><strong>ls</strong> [<em>List</em>] The list in which to insert the item</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">insert(&quot;d&quot;, 4, {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;})
+--&gt; {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;}
+</code></pre>
+
+<p><br/></p>
+<h4 id="intersect"><code>intersect</code><a class="headerlink" href="#intersect" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">intersect(l1, l2)
+</code></pre>
+
+<p>Return only the values of the first list also contained in the second list.</p>
+<p>Basically the opposite of <code>diff()</code></p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>l1</strong> [<em>List</em>] The first list to compare. This is where the result set will come from.</li>
+<li><strong>l2</strong> [<em>List</em>] The list that is being compared to</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">intersect({&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;}, {&quot;a&quot;, &quot;b&quot;, &quot;e&quot;, &quot;f&quot;})
+--&gt; {&quot;a&quot;, &quot;b&quot;}
+</code></pre>
+
+<p><br/></p>
+<h4 id="move_item"><code>move_item</code><a class="headerlink" href="#move_item" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">move_item(ls, oldindex, newindex)
+</code></pre>
+
+<p>Move an item from one spot in the list to another.</p>
+<p>Note that <code>move_item</code> removes the item from the list <em>first</em>, then readds it in the desired location. So, if you want to move an item to the end of a 3 item list, you would specify <code>3</code> as the <code>newindex</code>, not <code>4</code>. @example move_item({"a", "b", "c"}, 1, 3) --&gt; {"b", "c", "a"}</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] The list containing the element</li>
+<li><strong>oldindex</strong> [<em>Integer</em>] The index of the item to move</li>
+<li><strong>newindex</strong> [<em>Integer</em>] The index to where the item should be moved</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">move_item({&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}, 1, 4)
+--&gt; IndexError: Cannot insert item at index 4 when list has 2 items. (705)
+</code></pre>
+
+<p><br/></p>
+<h4 id="pop"><code>pop</code><a class="headerlink" href="#pop" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pop(ls)
+</code></pre>
+
+<p>Remove the last item from a list and return it.</p>
+<p>Acts as a shortcut for <code>pop_index((count ls), ls)</code></p>
+<p>Because an item cannot be deleted in place from a list, the return value will be a list containing both the popped value and the original list minus the last item (items 1 thru -2 of the list).</p>
+<p>The first item will be the popped value. The second value will be the updated list.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] The list from which to pop the last value</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">listlib's pop({&quot;a&quot;, &quot;b&quot;, &quot;c&quot;})
+--&gt; {&quot;c&quot;, {&quot;a&quot;, &quot;b&quot;}}
+</code></pre>
+
+<p><br/></p>
+<h4 id="pop_index"><code>pop_index</code><a class="headerlink" href="#pop_index" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pop_index(ix, ls)
+</code></pre>
+
+<p>Remove an item from a list at the given index and return it.</p>
+<p>Because an item cannot be deleted in place from a list, the return value will be a list containing both the popped value and the original list minus the popped item (<code>rest of list</code> if index is 1).</p>
+<p>The first item will be the popped value. The second value will be the updated list.</p>
+<p>If you just want to delete at an item at an index and do not care about the return value, you can run <code>pop_index()</code> and simply ignore the first return value.</p>
+<p>!!! warning <code>pop_index()</code> does not support reverse indexing. You will receive an error for <code>pop_index(-1, ls)</code>. To reverse index you will need to pass the actual index number to be popped: <code>pop_index((count ls), ls)</code></p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ix</strong> [<em>Integer</em>] The index to pop from the list</li>
+<li><strong>ls</strong> [<em>List</em>] The list from which to pop the last value</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">-- Pop an item and get its value
+listlib's pop_index(2, {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;})
+--&gt; {&quot;b&quot;, {&quot;a&quot;, &quot;c&quot;}}
+</code></pre>
+
+<pre><code class="applescript">-- Delete an item from a list, ignoring its return value
+set {_, ls} to listlib's pop_index(2, {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;})
+</code></pre>
+
+<p><br/></p>
+<h4 id="remove"><code>remove</code><a class="headerlink" href="#remove" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">remove(theItem, ls)
+</code></pre>
+
+<p>Remove the first occurrence of an item from a list.</p>
+<p>If the item is not present in the list, the list will remain unchanged.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>theItem</strong> [<em>Any</em>]  The item to remove</li>
+<li><strong>ls</strong> [<em>List</em>] The list from which to remove the item.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="sort"><code>sort</code><a class="headerlink" href="#sort" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">sort(theList)
+</code></pre>
+
+<p>Sort a list.</p>
+<p>This is the quicksort routine taken from Kevin Bradley's Nite Flite library. http://mac.brothersoft.com/nite-flite-script-library.html</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>theList</strong> [<em>List</em>] The list to sort</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="unique"><code>unique</code><a class="headerlink" href="#unique" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">unique(ls)
+</code></pre>
+
+<p>Remove duplicate items from a list.</p>
+<p>Because of Applescript comparison limitations, records and lists are not supported by this routine. Any lists containing a record or list will throw a TypeError.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] The list containing duplicates to delete</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">unique({&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;})
+--&gt; {&quot;a&quot;, &quot;b&quot;, c}
+</code></pre>
+
+<p><br/></p>
+<h4 id="zip"><code>zip</code><a class="headerlink" href="#zip" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">zip(ls1, ls2)
+</code></pre>
+
+<p>Zip two lists together, creating a list of 2-item lists.</p>
+<p>Works the same way as <code>zip_many()</code> except for only two lists.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls1</strong> [<em>List</em>] :</li>
+<li><strong>ls2</strong> [<em>List</em>] :</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">set l1 to {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+set l2 to {&quot;d&quot;, &quot;e&quot;, &quot;f&quot;}
+zip(l1, l2)
+--&gt; {{&quot;a&quot;, &quot;d&quot;}, {&quot;b&quot;, &quot;e&quot;}, {&quot;c&quot;, &quot;f&quot;}}
+</code></pre>
+
+<p><br/></p>
+<h4 id="zip_many"><code>zip_many</code><a class="headerlink" href="#zip_many" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">zip_many(ls)
+</code></pre>
+
+<p>Zip lists together, creating a list of n-item lists, where n = (count lists).</p>
+<p>Iterate through each of the given lists, adding their current values to an n-item list. If no lists are given (<code>zip_many()</code> receives a zero-item list), an empty list will be returned.</p>
+<p>If the lists are not the same length, the shortest will be used as the iteration count, and the remaining items of the longer lists will be thrown away.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>ls</strong> [<em>List</em>] A list of lists</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">zip_many({})
+--&gt; {}
+</code></pre>
+
+<pre><code class="applescript">set l1 to {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+set l2 to {&quot;d&quot;, &quot;e&quot;, &quot;f&quot;}
+set l3 to {1, 2, 3}
+zip_many({l1, l2, l3})
+--&gt; {{&quot;a&quot;, &quot;d&quot;, 1}, {&quot;b&quot;, &quot;e&quot;, 2}, {&quot;c&quot;, &quot;f&quot;, 3}}
+</code></pre>
+
+<pre><code class="applescript">set l1 to {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+set l2 to {&quot;d&quot;, &quot;e&quot;, &quot;f&quot;}
+set l3 to {&quot;1&quot;}
+zip_many({l1, l2, l3})
+--&gt; {{&quot;a&quot;, &quot;d&quot;, 1}}
+</code></pre>
+
+<p><br/></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../functools/" class="btn btn-neutral float-right" title="functools.applescript">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../functools/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

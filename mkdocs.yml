@@ -1,7 +1,7 @@
 site_name: Yaasl
 theme:
   name: null
-  custom_dir: docs/themes/rtd_dropdown
+  custom_dir: documentation_src/themes/rtd_dropdown
 extra_css:
 - themes/css/rtd_compact.css
 markdown_extensions:
@@ -17,4 +17,5 @@ pages:
   - ui.applescript: api-reference/ui.md
   - system.applescript: api-reference/system.md
   - math.applescript: api-reference/math.md
-
+docs_dir: documentation_src
+site_dir: docs
