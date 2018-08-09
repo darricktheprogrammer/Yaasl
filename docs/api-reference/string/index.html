@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>string.applescript - Yaasl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../themes/css/rtd_compact.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "string.applescript";
+    var mkdocs_page_input_path = "api-reference/string.md";
+    var mkdocs_page_url = "/api-reference/string/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Yaasl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	  
+          
+		  
+  <ul class="" href="../..">
+    <li class="toctree-l1">
+  <a class="" href="../..">Introduction</a>
+  </li></ul>
+          
+		  
+  <p class="caption">API Reference</p>
+  <ul class="current">
+          <li class="toctree-l1">
+            
+  <a class="" href="../list/">list.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../functools/">functools.applescript</a>
+        </li>
+          <li class="toctree-l1 current">
+            
+  <a class="current" href="./">string.applescript</a>
+  <ul class="subnav">
+      
+  <li class="toctree-l2 current">
+  
+    <a class="current"  href="#file-level-functions">File level functions</a>
+  
+  
+    <ul class="">
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#convert_case">convert_case</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#format">format</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#join">join</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pad_left">pad_left</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pad_left_with_char">pad_left_with_char</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pad_right">pad_right</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#pad_right_with_char">pad_right_with_char</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#search_and_replace">search_and_replace</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#sentence_case">sentence_case</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#split">split</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#title_case">title_case</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#to_lower">to_lower</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#to_upper">to_upper</a>
+        </li>
+    
+        <li class="toctree-l3 toc-item" >
+          <a class="toctree-l3" href="#trim">trim</a>
+        </li>
+    
+    </ul>
+  
+  </li>
+
+  </ul>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../ui/">ui.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../system/">system.applescript</a>
+        </li>
+          <li class="toctree-l1">
+            
+  <a class="" href="../math/">math.applescript</a>
+        </li>
+  </ul>
+
+          
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Yaasl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Reference &raquo;</li>
+        
+      
+    
+    <li>string.applescript</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Library for working with and manipulating text</p>
+<h1 id="file-level-functions">File level functions<a class="headerlink" href="#file-level-functions" title="Permanent link">&para;</a></h1>
+<h4 id="convert_case"><code>convert_case</code><a class="headerlink" href="#convert_case" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">convert_case(str, tCase)
+</code></pre>
+
+<p>Alternative method of converting case without directly calling the other routines.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The text to convert.</li>
+<li><strong>tCase</strong> [<em>String</em>] The desired case ("uppercase", "lowercase", "titlecase", or "sentencecase")</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="format"><code>format</code><a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">format(str, args)
+</code></pre>
+
+<p>Simplistic, python-style string formatter.</p>
+<p>This routine is based on python's <code>string.format()</code> method, but is a lot simpler. It will replace each instance of curly braces (<code>{}</code>) in the first string argument with the corresponding string from the list given as the second argument. This routine does not support python's more advanced string replacement features, such as the mini-language, or positional/keyworded substitutions.</p>
+<p>As a convenience, if there is only one replacement to be made, the second argument can simply be a string. It does not have to be a list.</p>
+<p>To escape a set of braces, simply put an asterisk in between them. This will tell <code>format()</code> to ignore them, and they will be printed out as a standard set of braces.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The original string formatting template.</li>
+<li><strong>args</strong> [<em>String, List</em>]  One or more strings used to replace <code>{}</code> in the string template.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p class="attribute_section">Examples</p>
+
+<pre><code class="applescript">format(&quot;This is a {} string.&quot;, &quot;test&quot;)
+--&gt; This is a test string.
+</code></pre>
+
+<pre><code class="applescript">format(&quot;This is a {} string.&quot;, {&quot;test&quot;})
+--&gt; This is a test string.
+</code></pre>
+
+<pre><code class="applescript">format(&quot;This is a {} {}&quot;, {&quot;test&quot;, &quot;string&quot;})
+--&gt; This is a test string.
+</code></pre>
+
+<pre><code class="applescript">format(&quot;This is a {} string.&quot;, {&quot;test&quot;})
+--&gt; This is a test string.
+</code></pre>
+
+<pre><code class="applescript">format(&quot;These are {}: {*}.&quot;, {&quot;curly braces&quot;})
+--&gt; These are curly braces: {}.
+</code></pre>
+
+<p><br/></p>
+<h4 id="join"><code>join</code><a class="headerlink" href="#join" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">join(theList, delimiter)
+</code></pre>
+
+<p>Convert a list to string, inserting a delimiter between each list item.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>theList</strong> [<em>List</em>] The list to convert.</li>
+<li><strong>delimiter</strong> [<em>String</em>] The text to insert between list items.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="pad_left"><code>pad_left</code><a class="headerlink" href="#pad_left" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pad_left(str, padwidth)
+</code></pre>
+
+<p>Pad a string with spaces on the left until it reaches the desired width.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string to pad.</li>
+<li><strong>padwidth</strong> [<em>Integer</em>] The desired width of the string.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="pad_left_with_char"><code>pad_left_with_char</code><a class="headerlink" href="#pad_left_with_char" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pad_left_with_char(char, str, padwidth)
+</code></pre>
+
+<p>Pad a string with the given character on the left until it reaches the desired width.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>char</strong> [<em>Char</em>] A single character to be used for padding.</li>
+<li><strong>str</strong> [<em>String</em>] The string to pad.</li>
+<li><strong>padwidth</strong> [<em>Integer</em>] The desired width of the string.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="pad_right"><code>pad_right</code><a class="headerlink" href="#pad_right" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pad_right(str, padwidth)
+</code></pre>
+
+<p>Pad a string with spaces on the right until it reaches the desired width.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string to pad.</li>
+<li><strong>padwidth</strong> [<em>Integer</em>] The desired width of the string.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="pad_right_with_char"><code>pad_right_with_char</code><a class="headerlink" href="#pad_right_with_char" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">pad_right_with_char(char, str, padwidth)
+</code></pre>
+
+<p>Pad a string with the given character on the right until it reaches the desired width.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>char</strong> [<em>Char</em>] A single character to be used for padding.</li>
+<li><strong>str</strong> [<em>String</em>] The string to pad.</li>
+<li><strong>padwidth</strong> [<em>Integer</em>] The desired width of the string.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="search_and_replace"><code>search_and_replace</code><a class="headerlink" href="#search_and_replace" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">search_and_replace(str, oldText, newText)
+</code></pre>
+
+<p>Search for text and replace it.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The original string.</li>
+<li><strong>oldText</strong> [<em>String</em>] The text to replace.</li>
+<li><strong>newText</strong> [<em>String</em>] The replacement text.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="sentence_case"><code>sentence_case</code><a class="headerlink" href="#sentence_case" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">sentence_case(str)
+</code></pre>
+
+<p>Convert text to contain capital letters at beginning of each sentence.</p>
+<p>The end of a sentences is considered to be one of ".!?" followed by one or two spaces.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string to convert.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="split"><code>split</code><a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">split(str, delimiter)
+</code></pre>
+
+<p>Split a string into a list on the delimiter.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string to split.</li>
+<li><strong>delimiter</strong> [<em>String</em>] The delimiter on which to split the string.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>List</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="title_case"><code>title_case</code><a class="headerlink" href="#title_case" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">title_case(str)
+</code></pre>
+
+<p>Convert text to title case.</p>
+<p>Does not take punctuation into account. Only words preceded by a space will be capitalized.</p>
+<p>The following words will always be converted to lowercase and not capitalized: a, an, in, the, and, but, for, or, nor, to.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The text to convert.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="to_lower"><code>to_lower</code><a class="headerlink" href="#to_lower" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">to_lower(str)
+</code></pre>
+
+<p>Convert a string to all lowercase, maintaining special characters.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string in which to convert the case.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="to_upper"><code>to_upper</code><a class="headerlink" href="#to_upper" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">to_upper(str)
+</code></pre>
+
+<p>Convert a string to all uppercase, maintaining special characters.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string in which to convert the case.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+<h4 id="trim"><code>trim</code><a class="headerlink" href="#trim" title="Permanent link">&para;</a></h4>
+<pre><code class="applescript">trim(str)
+</code></pre>
+
+<p>Remove whitespace from beginning and end of string.</p>
+<p class="attribute_section">Arguments</p>
+
+<ul>
+<li><strong>str</strong> [<em>String</em>] The string to trim.</li>
+</ul>
+<p class="attribute_section">Returns</p>
+
+<ul>
+<li>[<em>String</em>] </li>
+</ul>
+<p><br/></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ui/" class="btn btn-neutral float-right" title="ui.applescript">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../functools/" class="btn btn-neutral" title="functools.applescript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../functools/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ui/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
