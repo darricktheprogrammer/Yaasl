@@ -354,7 +354,11 @@
 <p>Because an item cannot be deleted in place from a list, the return value will be a list containing both the popped value and the original list minus the popped item (<code>rest of list</code> if index is 1).</p>
 <p>The first item will be the popped value. The second value will be the updated list.</p>
 <p>If you just want to delete at an item at an index and do not care about the return value, you can run <code>pop_index()</code> and simply ignore the first return value.</p>
-<p>!!! warning <code>pop_index()</code> does not support reverse indexing. You will receive an error for <code>pop_index(-1, ls)</code>. To reverse index you will need to pass the actual index number to be popped: <code>pop_index((count ls), ls)</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>pop_index()</code> does not support reverse indexing.</p>
+<p>You will receive an error for <code>pop_index(-1, ls)</code>. To reverse index you will need to pass the actual index number to be popped: <code>pop_index((count ls), ls)</code></p>
+</div>
 <p class="attribute_section">Arguments</p>
 
 <ul>

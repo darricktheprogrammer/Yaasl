@@ -230,7 +230,10 @@
               
                 <p>Library to add additional functional programming support to Applescript. Contains helper functions that are able to be passed into <code>map()</code> and <code>filter()</code>. These are duplicates of Applescript built-in functionality, but because the built-in functionality are not first-class functions, they are unable to be passed into functional programming tools.</p>
 <p>For example, there are helper functions for coercion such as <code>tostring(x)</code>. Even though this is built into the language, the helper function is there so it can be passed into <code>map()</code> like in the following example: <code>map(funclib's tostring, theList)</code> will convert <code>{1, 2, 3}</code> to <code>{"1", "2", "3"}</code>.</p>
-<p>!!! warning Any function passed to <code>map</code> or <code>filter</code> that is not self contained (i.e., it calls another function) will cause an error. Once the function is passed to <code>functools</code>, it is then a property of the <code>functools</code> library, meaning it no longer has access to any of the functions in it's own library. Until a fix can be determined, only attempt to <code>map</code> or <code>filter</code> using self contained functions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any function passed to <code>map</code> or <code>filter</code> that is not self contained (i.e., it calls another function) will cause an error. Once the function is passed to <code>functools</code>, it is then a property of the <code>functools</code> library, meaning it no longer has access to any of the functions in it's own library. Until a fix can be determined, only attempt to <code>map</code> or <code>filter</code> using self contained functions.</p>
+</div>
 <h1 id="_functionrunner">_FunctionRunner<a class="headerlink" href="#_functionrunner" title="Permanent link">&para;</a></h1>
 <p>Object that is responsible for actually running a single function and returning a result.</p>
 <h4 id="_functionrunnerrunit"><code>_FunctionRunner.runit</code><a class="headerlink" href="#_functionrunnerrunit" title="Permanent link">&para;</a></h4>
