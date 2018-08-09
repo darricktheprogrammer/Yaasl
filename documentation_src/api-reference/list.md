@@ -192,7 +192,10 @@ The first item will be the popped value. The second value will be the updated li
 
 If you just want to delete at an item at an index and do not care about the return value, you can run `pop_index()` and simply ignore the first return value.
 
-!!! warning `pop_index()` does not support reverse indexing. You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
+!!! warning 
+	`pop_index()` does not support reverse indexing.
+
+	You will receive an error for `pop_index(-1, ls)`. To reverse index you will need to pass the actual index number to be popped: `pop_index((count ls), ls)`
 
 <p class="attribute_section">Arguments</p>
 
